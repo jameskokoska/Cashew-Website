@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "public",
+    "site": "cashewapp",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

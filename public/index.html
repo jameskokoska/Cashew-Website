@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+    <title>Cashew</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  </head>
+  <body onload="startTitleAnimation(true);">
+    <div class="landing">
+      <div class="header">
+        <a href="/policy.html">Policy and Use</a>
+      </div>
+      <div class="landing-flex">
+        <div class="landing-header">
+          <div class="fix-flex-center">
+            <div class="app-name-header">
+              <img class="app-icon" src="assets/icon/icon.png"/>
+              <h2 class="app-name">Cashew</h2>
+            </div>
+            <h1 class="landing-title">
+              <div class="animate-in-1">Finally,</div>
+              <span class="animate-in-2 flashing-cursor" id="intro-message"></span>
+            </h1>
+            <div class="buttons-container">
+              <a href="https://play.google.com/store" target="_blank">
+                <div class="button">
+                  <img src="assets/link-icons/game.png"/>
+                  Google Play
+                </div>
+              </a>
+              <a href="https://play.google.com/store" target="_blank">
+                <div class="button" style="opacity: 0.2;">
+                  <img src="assets/link-icons/apple-game.png"/>
+                  App Store (Coming Soon!)
+                </div>
+              </a>
+              <a href="https://budget-track.web.app/" target="_blank">
+                <div class="button">
+                  <img src="assets/link-icons/computer.png"/>
+                  Web App
+                </div>
+              </a>
+              <a href="https://github.com/jameskokoska/Cashew" target="_blank">
+                <div class="button">
+                  <img src="assets/link-icons/code.png"/>
+                  GitHub
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="landing-images">
+          <picture>
+            <source srcset="assets/screenshots/budget-promotion-dark.png" media="(prefers-color-scheme: dark)"/>
+            <img class="landing-secondary-image" src="assets/screenshots/budget-promotion-light.png"/>
+          </picture>
+          <picture style="z-index: 2;">
+            <source srcset="assets/screenshots/home-promotion-dark.png" media="(prefers-color-scheme: dark)"/>
+            <img class="landing-primary-image" src="assets/screenshots/home-promotion-light.png"/>
+          </picture>
+        </div>
+      </div>
+    </div>
+    <div class="swiper home-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="assets/store-promo/Frame 1.png"></div>
+        <div class="swiper-slide"><img src="assets/store-promo/Frame 2.png"></div>
+        <div class="swiper-slide"><img src="assets/store-promo/Frame 3.png"></div>
+        <div class="swiper-slide"><img src="assets/store-promo/Frame 4.png"></div>
+        <div class="swiper-slide"><img src="assets/store-promo/Frame 5.png"></div>
+        <div class="swiper-slide"><img src="assets/store-promo/Frame 6.png"></div>
+        <div class="swiper-slide"><img src="assets/store-promo/Frame 1.png"></div>
+        <div class="swiper-slide"><img src="assets/store-promo/Frame 2.png"></div>
+        <div class="swiper-slide"><img src="assets/store-promo/Frame 3.png"></div>
+        <div class="swiper-slide"><img src="assets/store-promo/Frame 4.png"></div>
+        <div class="swiper-slide"><img src="assets/store-promo/Frame 5.png"></div>
+        <div class="swiper-slide"><img src="assets/store-promo/Frame 6.png"></div>
+      </div>
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+    <script>
+      var swiper = new Swiper(".home-swiper", {
+        slidesPerView: 1.2,
+        spaceBetween: 15,
+        speed: 500,
+        grabCursor: true,
+        centeredSlides: true,
+        loop: true,
+        mousewheel: false,
+        breakpoints: {
+          500: { slidesPerView: 1.5, spaceBetween: 20},
+          767: { slidesPerView: 2.75, spaceBetween: 40},
+          1200: { slidesPerView: 3.5, spaceBetween: 40},
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        // scrollbar: {
+        //   el: ".swiper-scrollbar",
+        //   hide: true,
+        // },
+      });
+    </script>
+    <p class="footer">Icons from FlatIcons by Muhamad Ulum, FreePik, and pch-vector</p>
+  </body>
+
+</html>

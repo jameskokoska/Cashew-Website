@@ -1,0 +1,442 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --link-color: #3370aa;
+    --themed-text: #2e3e83;
+    --white: white;
+    --black: black;
+    --background-color: white;
+    --image-shadow: #00000033 0px 60px 40px -7px;
+    --hover-button-bg: #00000021;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --link-color: #3370aa;
+    --themed-text: #d6d9fa;
+    --white: black;
+    --black: white;
+    --background-color: black;
+    --image-shadow: #3648ee21 -10px 20px 60px 10px;
+    --hover-button-bg: #ffffff2f;
+  }
+}
+
+.mobile-only{
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .mobile-only{
+    display: unset;
+  }
+  .desktop-only{
+    display: none;
+  }
+}
+
+@font-face {
+  font-family: "AvenirBook";
+  src: url("assets/fonts/Avenir\ Book.ttf");
+}
+
+@font-face {
+  font-family: "AvenirBlack";
+  src: url("assets/fonts/Avenir\ Black.ttf");
+}
+
+@font-face {
+  font-family: "AvenirHeavy";
+  src: url("assets/fonts/Avenir\ Heavy.ttf");
+}
+
+h1, h2, h3, h4, h5{
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  font-family: "AvenirBlack";
+}
+
+h2, h3, h4, h5 {
+  font-family: "AvenirHeavy";
+}
+
+p {
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+  font-family: "AvenirBook";
+}
+
+html, body {
+  scroll-behavior: smooth; 
+  max-width: 100%;
+  overflow-x: hidden;
+  padding:0;
+  margin:0;
+  font-family: "AvenirBook", Helvetica, Arial, sans-serif;
+  background-color: var(--background-color);
+}
+
+::-webkit-scrollbar {
+  max-width: 11px;
+  width: 0.9vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #686868; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7c7c7c;
+  background: #7c7c7c;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-track {
+  background: #d3d3d3fd; 
+  border-radius: 30px;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration-color: var(--link-color) !important;
+  transition: text-decoration-color 250ms;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration-color: transparent !important;
+  transition: text-decoration-color 250ms;
+  text-decoration: underline;
+  user-select: all;
+}
+
+.header{
+  position: absolute;
+  top: 10px;
+  right: 0px;
+}
+.header a{
+  font-size: 20px;
+  padding: 10px;
+}
+@media only screen and (max-width: 767px) {
+  .header a{
+    font-size: 15px;
+  }
+}
+
+.landing{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-flex{
+  width: 100%;
+  height: 100%;
+  padding: 0px 5%;
+  max-width: 1800px;
+  display: flex;
+}
+
+@media only screen and (max-width: 767px) {
+  .landing-flex{
+    flex-direction: column;
+  }
+}
+
+.landing-header{
+  flex: 0.5;
+  font-size: 40px;
+  padding: 0% 5%;
+  /* Because of 5% padding on each side horizontal */
+  width: 90%;
+  /* We want this width so the changing title has width space */
+  min-width: 600px;
+  display: flex;
+  align-self: center;
+  height: 100%;
+  /* background-color: red; */
+}
+
+.landing-title{
+  /* Reserved height for animated changing title */
+  min-height: 450px;
+}
+
+@media only screen and (max-width: 767px) {
+  .landing-header{
+    font-size: 24px;
+    min-width: 0px;
+  }
+  .landing-title{
+    /* Reserved height for animated changing title */
+    min-height: 300px;
+  }
+}
+
+.landing-title div{
+  display: block;
+}
+
+#intro-message{
+  display: inline-block;
+}
+
+.flashing-cursor::after{
+  height: 70px;
+  content: "";
+  width: 3px;
+  border-radius: 100px;
+  margin-bottom: -6px;
+  background-color: var(--black);
+  display: inline-block;
+  animation: flash-cursor 1234ms infinite;
+}
+
+@media only screen and (max-width: 767px) {
+  .flashing-cursor::after{
+    height: 45px;
+  }
+}
+
+@keyframes flash-cursor {
+  0%{opacity: 0; transform: scale(1) translateX(8px);}
+  50%{opacity: 0.9; ; transform: scale(1.02) translateX(8px);}
+  100%{opacity: 0; ; transform: scale(1) translateX(8px);}
+}
+
+.fix-flex-center{
+  margin: auto;
+  padding: 10% 0%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+  .fix-flex-center{
+    margin: auto;
+    padding: 0%;
+    padding-top: 10%;
+  }
+}
+
+.app-icon{
+  width:70px;
+  height:70px;
+}
+
+.app-name{
+  color: var(--themed-text);
+  margin-left: 20px;
+  font-size: 50px;
+}
+
+@media only screen and (max-width: 767px) {
+  .app-icon{
+    width:50px;
+    height:50px;
+  }
+  .app-name{
+    margin-left: 10px;
+    font-size: 35px;
+  }
+}
+
+.buttons-container{
+  margin-top: 50px;
+  animation: side-in 1000ms forwards;
+  animation-delay: 1400ms;
+  opacity: 0;
+}
+
+.buttons-container a {
+  color: var(--black);
+  text-decoration-color: none;
+  text-decoration: none;
+}
+
+.button{
+  color: var(--black);
+  font-size: 24px;
+  transition: letter-spacing 250ms, border-bottom 250ms, padding 250ms, background-color 250ms;
+  user-select: none;
+  /* border-bottom: solid transparent; */
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+  border-radius: 15px;
+}
+
+.button:hover{
+  letter-spacing: 2px;
+  /* border-bottom: solid var(--themed-text); */
+  background-color: var(--hover-button-bg);
+  padding: 10px 15px;
+  
+}
+
+.button img {
+  width: 45px;
+  margin-right: 15px;
+}
+
+@media only screen and (max-width: 767px) {
+  .button{
+    font-size: 20px;
+  }
+  .button img {
+    width: 35px;
+  }
+}
+
+
+.app-name-header{
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.landing-images {
+  flex: 0.5;
+  width: 100%;
+  margin-top: 1%;
+  margin-right: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+@media only screen and (max-width: 767px) {
+  /* Hide side screenshots when mobile screen */
+  .landing-images{
+    display: none;
+  }
+}
+
+.landing-images img{
+  border-radius: 35px;
+  box-shadow: var(--image-shadow);
+}
+
+.landing-primary-image{
+  height: 90%;
+  max-height: calc( 1100px * 0.9 );
+  min-height: calc( 800px * 0.9 );
+  z-index: 2;
+  animation: hover-in 750ms ease-in-out forwards;
+  animation-delay: 1750ms;
+  opacity: 0;
+}
+
+.landing-secondary-image{
+  height: 80%;
+  max-height: calc( 1100px * 0.8 );
+  min-height: calc( 800px * 0.8 );
+  position: relative;
+  right: -40px;
+  z-index: 1;
+  animation: hover-in 1000ms ease-in-out forwards;
+  animation-delay: 1400ms;
+  opacity: 0;
+}
+
+.animate-in-1{
+  animation: hover-in 2000ms forwards;
+  opacity: 0;
+}
+
+.animate-in-2{
+  animation: hover-in 2000ms forwards;
+  animation-delay: 700ms;
+  opacity: 0;
+}
+
+@keyframes hover-in {
+  0% { transform: translateY(30px); opacity: 0;}
+  100% { transform: translateY(0); opacity: 1;}
+}
+
+@keyframes side-in {
+  0% { transform: translateX(-30px); opacity: 0;}
+  100% { transform: translateX(0); opacity: 1;}
+}
+
+.footer{
+  opacity: 0.2;
+  margin: 5px 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .footer{
+    font-size: 13px;
+    text-align: center;
+    margin: 5% 20%;
+  }
+}
+
+.swiper{
+  max-width: 2000px;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+/* Guarantee some space between top area and screenshots */
+@media only screen and (max-height: 1110px) {
+  @media only screen and (min-width: 767px) {
+    .swiper{
+      margin-top: 100px;
+    }
+  }
+}
+@media only screen and (max-height: 760px) {
+  .swiper{
+    margin-top: 30px;
+  }
+}
+
+.swiper:after{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to left, var(--background-color) 0%, transparent 5%, transparent 95%, var(--background-color) 100%);
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 2000px) {
+  .swiper:after{
+    background-image: unset;
+  }
+}
+
+.swiper-wrapper img{
+  max-width: min( max(40vh,360px), 700px);
+}
+
+@media only screen and (max-width: 767px) {
+  .swiper-wrapper img{
+    width: 900px;
+  }
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: auto;
+  border-radius: 25px;
+}
