@@ -7,6 +7,8 @@
     --background-color: white;
     --image-shadow: #00000033 0px 60px 40px -7px;
     --hover-button-bg: #00000021;
+    --info-box-bg: #ffffff;
+    --info-box-shadow: rgba(143, 148, 153, 0.336) 0px 10px 24px;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -18,6 +20,8 @@
     --background-color: black;
     --image-shadow: #3648ee21 -10px 20px 60px 10px;
     --hover-button-bg: #ffffff2f;
+    --info-box-bg: #ffffff2f;
+    --info-box-shadow:  #515bb436 0px 10px 24px;
   }
 }
 
@@ -244,6 +248,7 @@ a:hover {
 }
 
 .app-name{
+  line-height: 1;
   color: var(--themed-text);
   margin-left: 20px;
   font-size: 50px;
@@ -509,11 +514,11 @@ a:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: var(--hover-button-bg);
+  background-color: var(--info-box-bg);
   border-radius: 20px;
   padding: 20px 30px;
   transition: transform 500ms;
-  box-shadow: var(--image-shadow);
+  box-shadow: var(--info-box-shadow);
   flex-wrap: wrap;
 }
 
@@ -554,5 +559,45 @@ a:hover {
   .help-translations .email{
     font-size: 17px;
     word-wrap: break-word;
+  }
+}
+
+.error404-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error404{
+  max-width: 1800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+.error404 img{
+  width: max( min( 50vh, 50vw), 300px );
+}
+
+.error404 h1{
+  margin: 5% 20px;
+  font-size: 45px;
+}
+
+.error404 a{
+  font-size: 20px;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .error404 h1{
+    margin: 5% 20px;
+    font-size: 25px;
+  }
+  .error404 img{
+    width: 70vw;
   }
 }
