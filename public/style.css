@@ -11,7 +11,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --link-color: #3370aa;
+    --link-color: #659ed4;
     --themed-text: #d6d9fa;
     --white: black;
     --black: white;
@@ -71,6 +71,10 @@ p {
   font-family: "AvenirBook";
 }
 
+li{
+  color: var(--black);
+}
+
 html, body {
   scroll-behavior: smooth; 
   max-width: 100%;
@@ -113,6 +117,9 @@ a:hover {
   text-decoration-color: transparent !important;
   transition: text-decoration-color 250ms;
   text-decoration: underline;
+}
+
+.email{
   user-select: all;
 }
 
@@ -120,7 +127,9 @@ a:hover {
   position: absolute;
   top: 10px;
   right: 0px;
+  z-index: 5;
 }
+
 .header a{
   font-size: 20px;
   padding: 10px;
@@ -439,4 +448,111 @@ a:hover {
   object-fit: cover;
   margin: auto;
   border-radius: 25px;
+}
+
+.policy-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+.policy{
+  padding: min( 5%, 70px ) 5%;
+  max-width: 1800px;
+  min-width: 0;
+}
+
+.policy p{
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+
+.policy h3{
+  font-size: 35px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.policy li{
+  font-size: 19px;
+}
+
+@media only screen and (max-width: 767px) {
+  .policy{
+    padding: 70px 5%;
+  }
+  .policy p{
+    margin-bottom: 14px;
+    font-size: 17px;
+  }
+  .policy h3{
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  .policy li{
+    font-size: 17px;
+  }
+}
+
+.no-style-link{
+  text-decoration: none;
+  text-decoration-color: transparent;
+  color: var(--black);
+}
+
+.no-style-link:hover{
+  text-decoration: none;
+  text-decoration-color: transparent;
+}
+
+.help-translations{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--hover-button-bg);
+  border-radius: 20px;
+  padding: 20px 30px;
+  transition: transform 500ms;
+  box-shadow: var(--image-shadow);
+  flex-wrap: wrap;
+}
+
+.help-translations:hover{
+  transform: scale(1.01);
+}
+
+.help-translations img{
+  width: 65px;
+  height: 65px;
+  margin-right: 20px;
+}
+
+.help-translations p{
+  margin: 0px;
+  line-height: 1.1;
+}
+
+.help-translations h4{
+  margin:0;
+  font-size: 25px;
+}
+
+.help-translations .email{
+  font-size: 20px;
+  word-wrap: break-word;
+}
+
+@media only screen and (max-width: 767px) {
+  .help-translations{
+    justify-content: center;
+    text-align: center;
+  }
+  .help-translations h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .help-translations .email{
+    font-size: 17px;
+    word-wrap: break-word;
+  }
 }
