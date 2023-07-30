@@ -144,5 +144,5 @@ function startTitleAnimation(quickFirst=false, oldMessage="") {
         z++;
       }
     }, 20);
-  }, 4700 + 40 * message.length)
+  }, 3300 + 40 * message.length - (quickFirst ? 1000 : 0))
 }
