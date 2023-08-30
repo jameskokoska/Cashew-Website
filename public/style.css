@@ -268,7 +268,7 @@ a:hover {
 .buttons-container{
   margin-top: 50px;
   animation: side-in 1000ms forwards;
-  animation-delay: 1400ms;
+  animation-delay: 10ms;
   opacity: 0;
 }
 
