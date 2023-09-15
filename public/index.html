@@ -24,7 +24,7 @@
     <meta property="twitter:description" content="A budget and financial tracking application designed for you" />
     <meta property="twitter:image" content="https://cashewapp.web.app/assets/preview.png" />
   </head>
-  <body onload="startTitleAnimation(true);">
+  <body onload="startTitleAnimation(true); rearrangeLinks();">
     <div class="landing">
       <div class="header">
         <a href="./policy.html">Terms and Privacy</a>
@@ -41,12 +41,20 @@
               <span class="animate-in-2 flashing-cursor" id="intro-message"></span>
             </h1>
             <div class="buttons-container">
-              <a href="https://play.google.com/store/apps/details?id=com.budget.tracker_app" target="_blank">
-                <div class="button">
-                  <img src="assets/link-icons/game.png"/>
-                  Google Play
-                </div>
-              </a>
+              <div>
+                <a id="googlePlayLink" href="https://play.google.com/store/apps/details?id=com.budget.tracker_app" target="_blank">
+                  <div class="button">
+                    <img src="assets/link-icons/game.png"/>
+                    Google Play
+                  </div>
+                </a>
+                <a id="appStoreLink" href="https://apps.apple.com/us/app/cashew-expense-budget-tracker/id6463662930" target="_blank">
+                  <div class="button">
+                    <img src="assets/link-icons/apple-game.png"/>
+                    App Store
+                  </div>
+                </a>
+              </div>
               <a href="https://budget-track.web.app/" target="_blank">
                 <div class="button">
                   <img src="assets/link-icons/computer.png"/>
@@ -57,12 +65,6 @@
                 <div class="button">
                   <img src="assets/link-icons/code.png"/>
                   GitHub
-                </div>
-              </a>
-              <a href="https://www.apple.com/app-store/" target="_blank">
-                <div class="button" style="opacity: 0.2;">
-                  <img src="assets/link-icons/apple-game.png"/>
-                  App Store (Coming Soon!)
                 </div>
               </a>
             </div>

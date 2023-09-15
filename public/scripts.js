@@ -146,3 +146,29 @@ function startTitleAnimation(quickFirst=false, oldMessage="") {
     }, 20);
   }, 3300 + 40 * message.length - (quickFirst ? 1000 : 0))
 }
+
+function iOS() {
+  return [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ].includes(navigator.platform)
+  // iPad on iOS 13 detection
+  || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  || navigator.platform.toUpperCase().indexOf('MAC')>=0
+  || /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
+  || /(iPhone|iPod|iPad)/i.test(navigator.platform)
+}
+
+function rearrangeLinks() {
+  const appStoreLink = document.querySelector('#appStoreLink');
+  const googlePlayLink = document.querySelector('#googlePlayLink');
+
+  if (iOS()) {
+    // iOS is true - move the App Store link before the Google Play link
+    googlePlayLink.parentNode.insertBefore(appStoreLink, googlePlayLink);
+  }
+}
