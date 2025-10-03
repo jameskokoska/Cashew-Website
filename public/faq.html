@@ -1,0 +1,720 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <script src="syonyms.js"></script>
+    <script src="faq.js"></script>
+    <title>Cashew FAQ</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <meta name="title" content="Cashew" />
+    <meta name="description" content="A budget and financial tracking application designed for you" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cashewapp.web.app/assets/preview.png" />
+    <meta property="og:title" content="Cashew" />
+    <meta property="og:description" content="A budget and financial tracking application designed for you" />
+    <meta property="og:image" content="https://cashewapp.web.app/assets/preview.png" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://cashewapp.web.app/assets/preview.png" />
+    <meta property="twitter:title" content="Cashew" />
+    <meta property="twitter:description" content="A budget and financial tracking application designed for you" />
+    <meta property="twitter:image" content="https://cashewapp.web.app/assets/preview.png" />
+  </head>
+  <body>
+    <div class="header">
+      <a href="./index.html">Home</a>
+      <a href="./policy.html">Terms and Privacy</a>
+    </div>
+    <div class="policy-wrap">
+      <div class="policy faq-width-limit">
+        <a href="./index.html" class="no-style-link">
+          <div class="app-name-header">
+            <img class="app-icon" src="assets/icon/icon-small.png"/>
+            <h2 class="app-name">Cashew FAQ</h2>
+          </div>
+        </a>
+        
+        <div class="chip-section">
+          <a href="#guides"><div class="chip"><p>Guides</p></div></a>
+          <a href="#pro-tips"><div class="chip"><p>Pro Tips</p></div></a>
+          <a href="#faq"><div class="chip"><p>FAQ</p></div></a>
+        </div>
+
+        <!-- Make this show up a bottom  -->
+        <!-- <div class="welcome-box">
+          <h2>Welcome to Cashew's FAQ Page!</h2>
+          <p>
+            Cashew is designed to be intuitive and straightforward. Cashew supports the majority of budgeting and financial organization styles, so you can manage your finances the way you want and gain clear insights into your spending habits. 
+          </p>
+          <p>
+            While using Cashew, your most-used actions are the most prominent with additional options appearing only when you need them, and your data is summarized clearly with thoughtful visuals. This FAQ includes quick-start guides and answers to common questions. You'll pick up most features just by using the app, but you can always browse these articles for tips, guides, and troubleshooting.
+          </p>
+        </div> -->
+
+        <div id="search-results-container">
+          <input class="faq-search" type="text" id="search-input" placeholder="Search..." oninput="searchAndHighlight()">
+          <div id="results"></div>
+        </div>
+        
+        <div id="faq"></div>
+        <h3 class="faq-header">FAQ</h3>
+        
+        <details id="syncing-with-multiple-users">
+          <summary>Share Data with Partner/Other User</summary>
+          <div>
+            <p>
+                To sync data and share data with multiple users, you need to share a Google account. This ensures privacy when sharing financial data. Since Cashew supports syncing of data with a Google account, a shared Google account will share data between multiple Cashew apps that use the same account.
+            </p>
+            <ul>
+                <li>Share a Google account with the users you want to sync with.</li>
+                <li>Use the syncing feature in the app to keep data up-to-date across all users.</li>
+            </ul>
+            <p>
+                Currently, Cashew does not support other methods of syncing due to privacy concerns and the complexity involved. Maintaining servers for this purpose is expensive and outside the scope of this app.
+            </p>
+          </div>
+        </details>
+
+        <details id="troubleshooting-syncing">
+          <summary>Syncing Troubleshooting</summary>
+          <div>
+            <p>If you're experiencing syncing issues between devices; consider the following:</p>
+            <p>Make sure you are logged in to Google Drive with the same account on all devices. Also ensure syncing between devices is enabled. Head to <em>More</em>, <em>Account</em>, login if needed, and tap the <em>Sync/Devices</em> button. Here, <em>Sync Data</em> can be toggled.</p>
+            <img src="./assets/faq/sync-data.png" class="small"/>
+            <img src="./assets/faq/sync-data2.png"/>
+            <p>Syncing involves two steps: upload and download. Both steps must occur for changes to reflect across platforms. This allows you to safely sync using your personal Google Drive, eliminating the need for a centralized server and ensuring your data is not shared with us or any third party.</p>
+            <p>You can force a sync by:</p>
+            <ul>
+              <li>Swiping down on the homepage</li>
+              <li>Launching the app fresh, if the user was previously logged in</li>
+            </ul>
+            <p>Each device needs to upload changes before they can be downloaded to another device. Therefore, you will need to first sync from one device to upload changes, and then sync on the target to download changes.</p>
+            <p><em>Note: auto login is not supported on the web app. This is a <a href="https://pub.dev/packages/google_sign_in_web#differences-between-google-identity-services-sdk-and-google-sign-in-for-web-sdk">limitation imposed by Google</a>. You will need to be sign-in manually each time to ensure syncing is properly executed.</em></p>
+            <h4 id="reset-sync">Reset Syncing</h4>
+            <p>Race conditions can occur and data can becomes out of sync between platforms. Cashew tries its best to ensure it updates data using the latest modified time and propagates changes across platforms. In the case where 2 (or more) devices are out of sync, you can force reset one by restoring a backup and removing all active sync devices. </p>
+            <p>First, create a backup (using the provided cloud backup service or local backups) on the device with the correct data and restore it (via the cloud or using a local backup). Now, open the <i>Sync/Devices</i> page in <i>More</i>, <i>Account</i> and delete all device sync backups. This will ensure that after restoring a backup, a sync will not occur using old out-dated data. On the out-of-sync target device, restore the cloud (or local) backup. This will ensure all data is exactly the same on both devices. </p>
+            <p><i>Note: Restoring a backup will always overwrite all current data on target device. Before overwriting data, it is always recommended to keep an extra backup.</i></p>
+            <h4 id="prevent-load-sync-after-backup">Prevent Resyncing When Restoring a Backup</h4>
+            <p>To prevent data from being downloaded and synced right after a backup is restored (cloud or local): open the <i>Sync/Devices</i> page in <i>More</i>, <i>Account</i> and delete all device sync backups. This will ensure that after restoring a backup, data updated from other platforms will not be restored. After this had been completed, the backup can be restored.</p>
+            <img src="./assets/faq/delete-sync-data.png" class="small"/>
+          </div>
+        </details>
+
+        <details id="track-credit-spending">
+          <summary>Tracking Credit Card Spending</summary>
+          <div>
+            <h4 id="track-credit-intro">Tracking Credit Spending</h4>
+            <p>Create a separate account specifically for tracking credit card spending. Every time you make a purchase using that credit card, you would add a transaction to that account. You can transfer amounts between accounts to add credit card payments or apply a balance correction.</p>
+            <img src="./assets/faq/create-balance-correction-transfer-balance.png"/>            
+            
+            <h4 id="credit-card-statement">Credit Card Statement</h4>
+            <p>In the "Account Details" page (tapping the account twice on the homepage account switcher sections), set the cycle time range for reports to reflect the spending from your credit card statement.</p>
+            <p>Utilize the "All Spending" page to view past spending ranges associated with your credit card account. You can apply filters to only select that account.</p>
+            
+            <h4 id="credit-card-budget">Credit Card Budget</h4>
+            <p>Create a new budget with a set limit, and set the account to the respective credit card account. You can set the start date to the date of your statement so that the totals within the budget history will match that of your statement. Pay attention to the set period dates - this will repeat automatically for the set time range.</p>
+            <img src="./assets/faq/add-credit-card-budget.png"/>
+          </div>
+        </details>
+
+        <details id="transferring-between-accounts">
+          <summary>Transferring Funds Between Accounts</summary>
+          <div>
+            <p><em>Note: you will need more than one account created within Cashew</em></p>
+            <h4 id="create-transfer">Creating a Transfer</h4>
+            <p>When there is more than one account created within Cashew, Cashew allows you to transfer funds. There are three primary ways of opening the transfer popup:</p>
+            <ul>
+              <li>A new <em>Transfer</em> tab will appear when creating a new transaction</li>
+              <img src="./assets/faq/transfer-balance1.png"/>
+              <li>Long pressing the (+) button will allow you to transfer funds</li>
+              <img src="./assets/faq/transfer-balance2.png"/>
+              <li>Editing an account will allow you to transfer funds</li>
+              <img src="./assets/faq/transfer-balance3.png"/>
+            </ul>
+            <h4 id="repetitive-transfers">Repetitive Transfers</h4>
+            <p>You can create a repetitive transfer by first adding a transfer transaction, then editing it to a 'repetitive' or 'upcoming' transaction type. Cashew will prompt you to change both transfer transactions and the transfer will behave as such.</p>
+          </div>
+        </details>
+
+        <details id="future-repetitive-transactions">
+          <summary>Future Repetitive Transactions and Automatic Payments</summary>
+          <div>
+            <p>The next repetitive transaction in the sequence will show up when you mark the current one as paid. </p>
+            <p>By default, overdue transactions (when the current date is past the set transactions date) are automatically paid. You can change this behavior by heading to <em>More</em>, <em>Settings & Customization</em>, <em>More Options</em>, Transactions: <em>Auto Pay Transactions</em>. You can press the <em>action</em> button in the transaction entry to mark it as paid immediately. Then it will create the next transaction in the cycle.</p>
+            <img src="./assets/faq/action-button.png" class="small"/>
+            <p>To create all future transactions, they will need to be marked as paid. By default they are marked as paid to the current date, not when the transaction is due. This can be changed by heading to <em>More</em>, <em>Settings & Customization</em>, <em>More Options</em>, Transactions: <em>Paid Date</em> set to <em>Transaction Date</em>. Now the upcoming repetitive transaction can be marked as paid and it will maintain its original due date, while creating the next in the sequence. These paid transactions will now count towards account and budget totals since it has been marked as paid.</p>
+          </div>
+        </details>
+
+        <details id="transaction-templates">
+          <summary>Transaction Templates</summary>
+          <div>
+            <p>Cashew does not offer transaction templates; however, frequently used transactions can be quickly added using the following methods:</p>
+            <ul>
+              <li>You can quickly make a copy of common transactions. After long pressing the plus button, you will see a list of commonly used transactions, tapping them will duplicate the transaction. If the amount differs, long press on the chip to customize the amount.</li>
+              <img src="./assets/faq/transaction-templates.png"/>
+              <li>Selecting (long pressing) a transaction will also allow you to duplicate the transaction (in the selected transaction top app bar). You can then edit the newly created transaction to your liking. </li>
+              <p><em>Tip: You can create duplicate transactions set to the current date and time by long pressing the duplicate option.</em></p>
+              <p><em>Tip: When editing the details of a transaction, to quickly set the date of a transaction to the current date and time, long press the date and time edit entry.</em></p>
+              <img src="./assets/faq/transaction-templates2.png"/>
+            </ul>
+          </div>
+        </details>
+
+        <details id="excluding-transaction-amount">
+          <summary>Excluding a Transaction Amount</summary>
+          <div>
+            <p>To exclude a transaction amount from all totals but still keep a transaction entry, you can edit the transaction of interest, scroll down and select <em>More Options</em> and toggle <em>Include Amount</em>. This setting is only available for <em>Default</em> transaction types.</p>
+            <img src="./assets/faq/include-amount.png"/>
+          </div>
+        </details>
+
+        <details id="set-budget-no-change-balance">
+          <summary>Add to a Budget, Goal, or Long-Term Loan Without Affecting Account Balance</summary>
+          <div>
+            <p>To add to a budget, goal, or long-term loan without impacting your account balance, create a separate account dedicated to tracking your budget, goal, or long-term loan contribution transactions. Transactions added to this account will not affect other account balances. Once you create a transaction added to this extra account, you can organize it into your budget, goal or long-term loan of your choice.</p>
+          </div>
+        </details>
+
+        <details id="archiving">
+          <summary>Archiving Budgets, Goals, and Long-Term Loans</summary>
+          <div>
+            <p>To archive a budget, goal, or long-term loan you need to visit the edit data page for each. To visit the edit data page head to <em>More</em>, <em>Budgets/Goals/Loans</em> and tapping the 'Pencil' icon in the top right if needed. To archive a budget/goal/long-term loan you can toggle the 'eye' icon. This will make the archived item always listed at the end of lists during selections and fade out the option.</p>
+            <p>To remove a pinned budget, goal, or long-term loan on the homepage, you will need to edit the home page section separately.</p>
+            <img src="./assets/faq/edit-budgets.png" class="small"/>
+            <img src="./assets/faq/edit-goals.png" class="small"/>
+            <img src="./assets/faq/edit-long-term-loanspng.png" class="small"/>
+          </div>
+        </details>
+
+        <details id="split-transaction-multiple-categories">
+          <summary>Splitting a Transaction Across Multiple Categories</summary>
+          <div>
+            <p>Cashew prioritizes efficient and straightforward transaction logging. If you need to divide a transaction among various categories, you can create separate transactions for each detail, enabling you to tailor your level of detail while maintaining a simple interface for all. Although it doesn't natively support splitting transactions across multiple categories, you have the freedom to log your spending as you see fit by adding individual transactions for each detail you wish to track.</p>
+          </div>
+        </details>
+
+        <details id="upgrade-to-cashew-pro-lifetime">
+          <summary>Upgrading to Cashew Pro Lifetime from a Subscription</summary>
+          <div>
+            <p>To upgrade to Cashew Pro Lifetime from a subscription you will need to cancel your current subscription. Once the term ends, you will be able to purchase Cashew Pro Lifetime; or any other subscription option. This is to ensure each user gets the full term of Cashew Pro they have paid for.</p>
+            <!-- <p>If a Cashew Pro license is cancelled or expired and a user has utilized premium features, those features will not be removed. For instance, if a user has multiple budgets, the budgets will remain intact. However, new budgets cannot be made.</p> -->
+          </div>
+        </details>
+
+        <details id="cashew-pro-multiple-devices">
+          <summary>Using Cashew Pro on Multiple Devices and Restoring Purchases</summary>
+          <div>
+            <p>Each platform operates with its own billing system (iOS and Android), therefore it would need to be purchased separately on each platform. Every purchase of Cashew Pro supports the app's development.</p>
+            <p>A purchased Cashew Pro license can be shared between any number of devices using the same Apple ID Account through the App Store on iOS or can be shared between any number of devices using the same Google account through the Play Store on Android. A Cashew Pro license is linked to the account used on the Google Play or App Store, not to the account used within Cashew - keep this in mind if you are trying to restore a license purchase.</p>
+            <!-- <p>When restoring a backup that previously utilized premium features, those features will not be removed. For instance, if a backup with multiple budgets is restored on a device without Cashew Pro, the budgets will remain intact.</p> -->
+            <p>The web app does not support Cashew Pro. </p>
+            <h4 id="restore-android-license">Troubleshooting Restoring License Purchases on Android</h4>
+            <p>A Cashew Pro license is linked to the Google Account used on the Google Play Store when the purchase was made. It is not necessarily related to the account used in the Cashew app. When restoring a purchase on a different device, please make sure you are logged into the same Google account in the Play Store that the purchase was made on for both devices and it is set as the primary account (the first account) on the Google Play Store.</p>
+            <p>Within the application you can tap 'restore purchases' to ping Google Services about your purchase. Again, ensure you are signed in to the correct Google Account on the Play Store and it is selected as your primary account on the Google Play Store, not within Cashew. The account within Cashew does not impact the restoring of a license purchase - it is only related to cloud backups. You may need to contact Google Play support to inquire about your purchase if it was not successfully processed.</p>
+          </div>
+        </details>
+
+        <div id="pro-tips"></div>
+        <h3 class="faq-header">Pro Tips</h3>
+
+        <details id="customizing-tab-pages">
+          <summary>Customizing Bottom Navigation Bar Pages</summary>
+          <div>
+            <p>To customize the navigation tabs, long press each one to select the page of preference. You cannot change the last tab.</p>
+            <img src="./assets/faq/custom-tab-shortcut.png"/>
+            <p><em>Note: You can only customize tabs while in mobile layout. When in fullscreen/landscape the side navigation menu cannot be customized.</em></p>
+          </div>
+        </details>
+
+        <details id="duplicating-transaction-current-time">
+          <summary>Duplicating a Transaction to the Current Date and Time</summary>
+          <div>
+            <p>When a transaction is selected you can duplicate the transaction (in the selected transaction top app bar). To duplicate the transactions to the current date and time, you can long press the duplicate option.</p>
+            <img src="./assets/faq/transaction-templates2.png"/>
+            <p>You can also quickly make a copy of common transactions by long pressing the plus button. You will see a list of commonly used transactions, tapping them will duplicate the transaction. If the amount differs, long press on the chip to customize the amount.</p>
+            <img src="./assets/faq/transaction-templates.png"/>
+          </div>
+        </details>
+
+        <details id="long-press-plus-button">
+          <summary>Long Press the (+) Button</summary>
+          <div>
+            <p>After long pressing the (+) button in the bottom right corner on most pages, you will be presented with more options to 'Add' things apart from the default transaction.</p>
+            <img src="./assets/faq/long-press-plus-button.png" class="small"/>
+            <p>In the popup, you can easily create transfers between accounts or correct an accounts balance under the "Accounts" section. You can quickly duplicate common transactions by tapping the respective transaction chip under "Transactions". There are many other actions that can be performed in this menu.</p>
+            <img src="./assets/faq/long-press-plus-button-details.png" class="small"/>
+          </div>
+        </details>
+
+        <details id="long-pressing-to-edit">
+          <summary>Long Pressing to Edit</summary>
+          <div>
+            <p>Most UI elements can be 'long pressed' (a press and hold) to edit or perform an extra action. For example, long pressing a category when selecting one during a 'Select Category' popup, will allow you to edit that category.</p>
+          </div>
+        </details>
+
+        <details id="copy-and-paste-amounts">
+          <summary>Copy and Paste Amounts</summary>
+          <div>
+            <p>Most amounts within Cashew can be 'long pressed' (a press and hold) to copy the amount. When adding a transaction or entering an amount, you can long press to 'copy' or 'paste' amounts from your clipboard.</p>
+            <img src="./assets/faq/copy-paste-amount2.png" class="small"/>
+            <img src="./assets/faq/copy-paste-amount.png" class="small"/>
+          </div>
+        </details>
+
+        <details id="sharing-transaction-details">
+          <summary>Sharing Transaction Details</summary>
+          <div>
+            <p>After selecting multiple transactions with a long press, you can share a breakdown of the selected transaction by tapping the total amount in the dropdown app bar. Alternatively, you can long press the total to copy the transactions breakdown to your clipboard.</p>
+            <img src="./assets/faq/share-transaction-details.png"/>
+          </div>
+        </details>
+
+        <details id="app-links">
+          <summary>App Links: Create Transactions Automatically</summary>
+          <div>
+            <p>To create transactions automatically, you can use the App Links API. The full documentation can be found here: <a href="https://github.com/jameskokoska/Cashew?tab=readme-ov-file#app-links">https://github.com/jameskokoska/Cashew?tab=readme-ov-file#app-links</a>.</p>
+          </div>
+        </details>
+
+        <div id="guides"></div>
+        <h3 class="faq-header">Guides</h3>
+
+        <details id="accounts">
+          <summary>
+            <div class="summary-with-icon"><img src="./assets/faq/icons/accounts.svg">Accounts</div>
+          </summary>
+          <div>
+            <h4 id="accounts-what-is">What is an Account?</h4>
+            <p>
+              An <em>account</em> represents a place where money is stored or spent from (e.g., bank, cash, credit card, savings). All transactions are saved against a single account, and reports/budgets roll up from those account balances. When you need to move money between accounts, use a transfer - see <a target="_blank" href="#transferring-between-accounts">Transferring Funds Between Accounts</a>.
+            </p>
+
+            <h4 id="accounts-primary">Primary Account & App Currency</h4>
+            <p>
+              The selected account on the homepage, or the starred account on the "Edit Accounts" list page is the <em>Primary Account</em>.
+            </p>
+            <p>The Primary Account determines:</p>
+            <ul>
+              <li>The default account selected when creating new transactions.</li>
+              <li>The primary currency - totals and reports are shown in this currency. </li>
+              <li>The target currency for conversions from other accounts. Amounts of different currencies will be converted to the Primary Account's currency for calculating totals.</li>
+            </ul>
+            <img src="./assets/faq/account-currency-picker.png" class="small"/>
+            <p>
+              To change the app's primary currency, edit the Primary Account and choose a currency. The Primary Account's becomes the application's display currency.
+            </p>
+
+            <h4 id="accounts-multi-currency">Multiple Currencies</h4>
+            <p>
+              Each account has one currency. Cashew converts all account balances and totals to the Primary Account's currency for summaries and reports. Cashew offers a convenient way to convert other currencies amounts to the Primary Account's currency - see <a target="_blank" href="#multiple-currencies">Using Multiple Currencies</a>.
+            </p>
+            <p>
+              When entering an amount, you can tap the currency conversion button to convert from the selected account into the primary currency in one step. You can also set custom rates in <em>More</em>, <em>Accounts</em>, <em>Exchange Rates</em> - see <a target="_blank" href="#custom-currencies">Custom Currencies</a>.
+            </p>
+
+            <h4 id="decimal-precision">Decimal Precision</h4>
+            <p>
+              <em>Decimal precision</em> controls how many digits you can enter after the decimal point for a given account. The setting is per account and applies when adding or editing transactions in that account. For example: a decimal precision of 5 allows amounts of "1.23456" or "1.234". A decimal precision of 2 allows for amounts of "1.23" or "1.20" or "1.00". A decimal precision of 0 only allows for whole numbers, such as "1" or "2". When displayed, amounts will be rounded to the chosen decimal precision.
+            </p>
+
+            <h4 id="accounts-transfers">Transfers Between Accounts</h4>
+            <p>
+              Use a <em>Transfer</em> to move money between two accounts. Cashew creates a paired set of transactions and excludes them from income/expense totals, keeping reports and account totals accurate . Learn how to create transfers in <a target="_blank" href="#transferring-between-accounts">Transferring Funds Between Accounts</a>.
+            </p>
+
+            <h4 id="accounts-credit-cards">Tracking Credit Card Accounts</h4>
+            <p>
+              Create a dedicated account per credit card and log purchases to that account. "Pay" the credit card via transfers from your funding account. For the full guide: <a target="_blank" href="#track-credit-spending">Tracking Credit Card Spending</a>.
+            </p>
+
+            <h4 id="accounts-balance-corrections">Balance Corrections & Account Totals</h4>
+            <p>
+              If an account's starting balance or running total needs adjustment, use a <em>Balance Correction</em>. This special category affects account totals without counting as income or expense, and is also used behind the scenes for transfers. Read about Balance Corrections: <a target="_blank" href="#balance-corrections">Balance Correction</a>.
+            </p>
+            <img src="./assets/faq/create-balance-correction.png" class="small"/>
+
+            <h4 id="accounts-net-worth">Net Worth Account Selection</h4>
+            <p>
+              Choose which accounts are included in the homepage Net Worth (and the time range) by long-pressing the Net Worth section or via <em>Edit Home</em>. 
+              See <a target="_blank" href="#select-accounts-for-net-worth">Net Worth Account Selection</a>.
+            </p>
+
+            <h4 id="accounts-manage">Creating, Editing, Archiving, and Managing Accounts</h4>
+            <p>
+              To create and edit accounts, go to <em>More</em>, <em>Accounts</em>. Here you can set the Primary Account. Each account has a color, currency, and decimal precision. You can <em>Merge Accounts</em> together in the Edit Account page - which transfers the transactions of one account into another.
+            </p>
+            <img src="./assets/faq/edit-accounts.png" class="small"/>
+          </div>
+        </details>
+
+        <details id="categories">
+          <summary>
+            <div class="summary-with-icon"><img src="./assets/faq/icons/categories.svg">Categories</div>
+          </summary>
+          <div>
+            <h4 id="categories-what-is">What are Categories?</h4>
+            <p>
+              Categories organize your transactions. Every transaction requires a category. 
+            </p>
+            <p>
+              Categories drive reports and budgets by grouping related spending and income. You can use categories to your advantage to set budgets for specific categories - see <a target="_blank" href="#budget-category-goals">Category Spending Goals</a>
+            </p>
+
+            <h4 id="categories-polarity-default">Income and Expense Categories</h4>
+            <p>
+              When you create a category, you assign it a default <em>Income</em> or <em>Expense</em>. This default is applied automatically when you select the category while adding a transaction. However, after selecting a category when creating a transaction, it can be switched to any Income/Expense type.
+            </p>
+            <p>For example:</p>
+            <ul>
+              <li>You can use a "Work" category for work income and work expenses</li>
+              <li>"Bills & Fees" can include both expenses and earned money</li>
+            </ul>
+
+            <h4 id="categories-subcategories">Subcategories & Organization</h4>
+            <p>
+              Every category can have subcategories for further categorization. You can create a subcategory for a main category on the Edit Category page.
+            </p>
+
+            <h4 id="categories-balance-correction">Special Case: Balance Correction</h4>
+            <p>
+              The <em>Balance Correction</em> category is a special category used by transfers and manual balance fixes. It affects account totals without being counted as income/expense in reports - see <a target="_blank" href="#balance-corrections">Balance Correction</a>.
+            </p>
+
+            <h4 id="categories-manage">Creating, Editing, Archiving, and Managing Categories</h4>
+            <p>
+              To create and edit categories, go to <em>More</em>, <em>Categories</em>. Here, you can create new categories, change the order or edit a specific category. You can <em>Merge Categories</em> together in the Edit Category page - which transfers the transactions of one category into another. You can create a subcategory for a main category on the Edit Category page. You can also convert an existing main category into a subcategory from the Edit Category page. 
+            </p>
+          </div>
+        </details>
+
+        <details id="budgets">
+          <summary>
+            <div class="summary-with-icon"><img src="./assets/faq/icons/budgets.svg">Budgets</div>
+          </summary>
+          <div>
+            <h4 id="what-is-a-budget">What is a Budget?</h4>
+            <p>A budget is a financial plan that outlines expected income or expenses over a specific period of time. It helps manage money by setting limits on spending, tracking financial goals, and ensuring that resources are used effectively. It allows the balance of what comes in with what goes out. Tracking finances over a period of time and analyzing the insights can produce a clearer understanding of spending habits, highlight areas for saving, and support smarter financial decision-making.</p>
+            <p>Cashew is a budget tracking application after all, so let's take a deep dive into learning how to create and manage a budget within Cashew in detail.</p>
+            <h4 id="budget-create-intro">Creating a Budget</h4>
+            <p>To create a budget, first open the <em>Budgets</em> page. Head to <em>More</em>, <em>Budgets</em>, and tap the (+) button.</p>
+            <img src="./assets/faq/add-budget.png" class="small"/>
+            <img src="./assets/faq/add-budget2.png" class="small"/>
+            <h4 id="budget-types">Budget Types</h4>
+            <p>There are two types of budgets in Cashew: <em>Added Only</em> budget and an <em>All Transactions</em> budget. This cannot be changed after the budget is created. However, you can create multiple budgets within Cashew.</p>
+            <p><strong>Added Only Budget:</strong></p>
+            <ul>
+              <li>Only the transactions you add</li>
+              <li>Useful for one-time budgets with custom time periods</li>
+              <li>Example: 'Vacation' budget</li>
+            </ul>
+            <p><strong>All Transactions Budget:</strong></p>
+            <ul>
+              <li>All transactions within selected categories and filters</li>
+              <li>Automatically include transactions if they follow the set filters specified in the budget</li>
+              <li>Useful for long-term budgets over multiple periods</li>
+              <li>Example: 'Monthly Spending' budget</li>
+            </ul>
+            <img src="./assets/faq/budget-type-options.png"/>
+            <h4 id="budget-parameters">General Budget Parameters</h4>
+            <p>You can select if you want to budget for savings (positive cash flow, such as income) or budget for negative cash flow, such as expenses. Each budget has a name, color, amount, and the start day and period. </p>
+            <h4 id="budget-cycle">Cycles and Time Periods</h4>
+            <p>The cycle of a budget will always reset and past budget periods can be viewed. If you want a monthly repetitive budget to start on the 21st of the month, select any date with the day of the 21 (e.g., September 21) and [ <b>/ 1 month</b> ] as the time frame. Cashew will show you the current period based on the current date from the start date you set.</p>
+            <p>To set a custom time period for a budget, change the time frame from the default [ <b>month</b>]  to [ <b>custom</b> ]. Custom time periods do not repeat.</p>
+            <img src="./assets/faq/example-budget.png" class="small"/>
+            <p>To set the period, you can choose a custom budget period (a time range between 2 dates) or an automatically recurring cycle, such as every 2 weeks, or every month.</p>
+            <h4 id="budget-filters">"All Transactions" Budget Filters</h4>
+            <p>For an <em>all transactions</em> budget, you can select the transactions to automatically include. For example, if you would like to include income in an expense budget (which will decrease the total spend, since the opposite polarity of transactions are included), you can select <em>Income</em> under <em>Transactions to Include</em>. Tap the (i) to read about each <em>Transactions to Include</em> filter. You can also select which categories to include or exclude from an all transactions budget.</p>
+            <img src="./assets/faq/transactions-to-include.png"/>
+            <h4 id="budget-exclude-transactions">Excluding Transactions From "All Transactions" Budget</h4>
+            <p>Each transaction can also be manually excluded from an all transactions budget. To do this, edit the transaction of interest, scroll down, tap <em>More Options</em>, and select the budget you would like to exclude this transaction from.</p>
+            <img src="./assets/faq/exclude-transaction.png"/>
+
+            <h4 id="budget-category-goals">Setting Up Category Spending Goals</h4>
+            <p>Once you create a budget, you can set up smaller 'sub-budgets' or, as Cashew calls them, <em>Category Spending Goals</em> to break down your spending for each category within an overall budget.</p>
+            <p>To add category spending goals, edit the budget and tap <em>Set Category Spending Goals</em>. Here you can set a percentage goal (percentage of the budget total) for each category or an absolute spending goal (actual amount of money). You can also apply these goals to subcategories and main categories. By long-pressing a category entry in the budget spending overview page below the pie chart, you can quickly modify the category spending goal to suit your spending needs.</p>
+            <img src="./assets/faq/spending-goals.png" class="small"/>
+          
+            <h4 id="budget-reading-graph">Reading a Budget Graph</h4>
+            <p>Cashew adds useful indicators to help you track your spending trajectory. Within a budget spending breakdown, you will see a line graph showing the amount spent versus date through the budget period.</p>
+            <p>A dashed line is drawn on the current date and the average amount spent per day up to the current day. The intersection indicates where your spending should be at that given time for a budget to stay on track.</p>
+            <img src="./assets/faq/budget-graph.png" class="small"/>
+
+            <h4 id="budget-view-history">Viewing Past Budget Periods</h4>
+            <p>You can tap the history icon to see past budget period breakdowns. You can only view the history of non-custom period budgets.</p>
+            <img src="./assets/faq/budget-history-button.png" class="small"/>
+            <img src="./assets/faq/budget-history.png"/>
+
+            <h4 id="budget-manage">Creating, Editing, Archiving, and Managing Budgets</h4>
+            <p>
+              To create and edit budgets, go to <em>More</em>, <em>Budgets</em>. Here, you can create new budgets, change the order, edit a specific budget or archive a budget. When budgets are completed or no longer needed, they can be "archived" - see <a target="_blank" href="#archiving">archiving</a>.
+            </p>
+          </div>
+        </details>
+
+        <details id="goals">
+          <summary>
+            <div class="summary-with-icon"><img src="./assets/faq/icons/goals.svg">Goals</div>
+          </summary>
+          <div>
+            <h4 id="goals-what-is">What is a Goal?</h4>
+            <p>
+              A <em>goal</em> tracks progress toward a target amount (saving up or paying down). You add contributions as transactions, and Cashew totals the cash flow assigned to that goal to show how close you are to the target.
+            </p>
+
+            <h4 id="goals-cash-flow">How Goal Progress Is Calculated</h4>
+            <p>
+              Goal progress is the <strong>sum of transactions assigned to the goal</strong> compared against its target amount. Assign any transaction to a goal when creating or editing it. You can contribute from any account; totals are converted to the app's Primary Account's currency for consistency - see <a target="_blank" href="#accounts-primary">Primary Account</a> for more information.
+            </p>
+
+            <h4 id="goals-type">Savings And Expense Goals</h4>
+            <p>
+              Choose a goal type that matches the direction of cash flow you're tracking:
+            </p>
+            <ul>
+              <li><strong>Income Goal</strong> - Positive cash flow toward a target you're accumulating (e.g., Emergency Fund, Vacation). Contributions are income transactions increase progress toward the target.</li>
+              <li><strong>Expense Goal</strong> - Negative cash flow toward reducing something you owe (e.g., Paying down a balance or planned outlay). Contributions are expense transactions and increase progress toward the target.</li>
+            </ul>
+
+            <h4 id="goals-contribute">Contributing to a Goal</h4>
+            <p>When adding or editing a transaction, assign it to the goal by selecting the goal in the Add/Edit Transaction page.</p>
+            <p>Automate recurring contributions with repetitive/upcoming transactions - see <a target="_blank" href="#future-repetitive-transactions">Future Repetitive Transactions and Automatic Payments</a>.</p>
+
+            <h4 id="goals-separate-account">Tracking Without Affecting Main Account Balances</h4>
+            <p>
+              If you want goal contributions to <em>not</em> change your everyday account balances, create a dedicated separate "tracking" account and post goal-contribution transactions there. This keeps operational balances untouched while still recording goal progress. See: <a target="_blank" href="#set-budget-no-change-balance">Add to a Goal Without Affecting Account Balance</a>.
+            </p>
+            <p>
+              Transfer transactions can also be added to goals. Pair goals with transfers to reflect real money movements between funding and destination accounts.
+            </p>
+
+            <h4 id="goals-manage">Creating, Editing, Archiving, and Managing Goals</h4>
+            <p>
+              To create and edit goals, go to <em>More</em>, <em>Goals</em>. Here, you can create new goals, change the order, edit a specific goals or archive a goals. When goals are completed or no longer needed, they can be "archived" - see <a target="_blank" href="#archiving">archiving</a>.
+            </p>
+            <img src="./assets/faq/edit-goals.png" class="small"/>
+          </div>
+        </details>
+
+        <details id="loans">
+          <summary>
+            <div class="summary-with-icon"><img src="./assets/faq/icons/loans.svg">Loans</div>
+          </summary>
+          <div>
+            <p>Loans help you track when money is lent or borrowed and therefore track owed money. There are 2 types of loans in Cashew. One-time loans and long-term loans. Loans can be managed on the <em>More</em>, <em>Loans</em> page within Cashew.</p>
+          
+            <h4 id="ot-loans">One-Time Loans</h4>
+            <p>One-time loans are set by changing the transaction type. These loan transactions can only be collected to the same account. A "lent" transaction is a negative cash flow until marked as "collected". This emulates receiving money (positive) until marked as collected, resulting in a net 0. A "borrowed" transaction is positive cash flow until marked as "settled". This emulates giving out money (negative) until marked as settled/received, resulting in a net 0. </p>
+            <img src="./assets/faq/one-time-loans-selection.png" class="small"/>
+            
+            <h4 id="lt-loans">Long-Term Loans</h4>
+            <p>Long-term loans are more complicated than one-time loans, but support collection/settlement with different accounts across multiple transactions. Essentially, a long-term loan is a collection of transactions, displaying the difference. Long-term loan totals can change dynamically. When the net is 0 of all transactions included in a long-term loan, it is considered "settled/collected/paid off". Add transactions to a long-term loan to keep track of the loan total and payments.</p>
+            <p>Since a long-term loan is a collection of transactions, each transaction can belong to a different account - therefore supporting collections/settlements with different accounts.</p>
+            <p>To increase the long-term loan amount, add a transaction of the same polarity. For "Lent" loans, increase the loan amount by adding a "Paid" (negative) transaction. For "Borrowed" loans, increase the loan amount by adding a "Collected" (positive) transaction.</p>
+            <p>To add progress towards a loan, add a transaction with the opposite polarity. For "Lent" loans, decrease the loan amount by adding a "Collected" (positive) transaction. For "Borrowed" loans, increase the loan amount by adding a "Paid" (negative) transaction.</p>
+
+            <h4 id="ex-lt-loan">Example Long-Term Loan</h4>
+
+            <img src="./assets/faq/long-term-loan-example.png" class="small"/>
+
+            <p>For example, if you create a long-term loan of type "lent" of 50$. This will create the initial lent out "Paid" transaction of amount 50$. Then add a "Collected" transaction manually with amount of 20$. This will result in the net total being 30$ - and therefore 30$ left to be collected, displayed in the interface. 
+            <p>Note that the "Paid" and the "Collected" transaction can be have a different account, allowing you to separate the totals across multiple different accounts.</p>
+            <p>Say in this example, the long-term loan amount total needs to be increased to 60$ from 50$. Manually add a new "Paid" transaction to this long-term loan of amount 10$ and the total left to collect will increase by 10$. This results in the long-term loan totalling 60$.</p></p>
+
+            <p>If the type of long-term loan is switched to "Borrowed" instead of lent, the opposite polarity of transactions will be used to calculate the total. </p>
+
+            <p><em>Tip: In a long-term loan, you can also change the "Total Offset". The total offset will not count as a transaction, but will add to the total of the loan by some offset set. This is useful if you need to modify the total of the loan without adding a transaction affecting the net totals, for example to increase the loan amount due to interest or other unaccounted for costs modifying the total owed/lent out.</em></p>
+            <img src="./assets/faq/long-term-loan-total-offset-example.png" class="small"/>
+          </div>
+        </details>
+
+        <details id="balance-corrections">
+          <summary>
+            <div class="summary-with-icon"><img src="./assets/faq/icons/balance-correction.svg">Balance Correction</div>
+          </summary>
+          <div>
+            <p>A "balance correction" within Cashew is a powerful special type of transaction. It is a transaction that is not globally categorized by Cashew as Income or Expense. By default, this special category does not exist - to let Cashew create it, edit an account and perform a <a target ="_blank" href="#transferring-between-accounts"><i>Transfer</i></a> or <i>Correct Total Balance</i>.</p>
+            <img src="./assets/faq/create-balance-correction.png"/>
+            <p>Once it is created, it can be edited by the user and will still maintain its properties. The balance correction category has the following details:</p>
+            <img src="./assets/faq/balance-correction-category.png"/>
+            <h4 id="bc-uses">Uses of the Balance Correction</h4>
+            <p>The balance correction category is primarily used in Cashew for <a target ="_blank" href="#transferring-between-accounts"><i>Transfers</i></a> and <i>Balance Corrections</i> of accounts - since these operations are not directly related to income or expenses. However, this category can manually be used to track refunds/returns/payments etc. - or transactions that would not be otherwise categorized as an income or expense directly.</p>
+            <p>Balance corrections also allow users to track credit card accounts and payments without affecting incoming or outgoing totals produced by categorized income and expense transactions. See: <a target="_blank" href="#track-credit-spending">Tracking Credit Card Spending with Cashew.</a></p>
+          </div>
+        </details>
+
+        <details id="multiple-currencies">
+          <summary>
+            <div class="summary-with-icon"><img src="./assets/faq/icons/multiple-currencies.svg">Using Multiple Currencies</div>
+          </summary>
+          <div>
+            <p>Cashew only supports one currency per account. You can change the currency by editing an account.</p>
+            <p>To change the primary account's currency by heading to <em>More</em>, <em>Accounts</em>; the starred account represents the primary account and selected currency of the application. Cashew will convert all currencies to this account.</p>
+            <img src="./assets/faq/account-currency-picker.png" class="small"/>
+            <p>However, if you need to enter a different currency with automatic conversion into another account, you can use the currency conversion button when entering an amount.</p>
+            <p>Make sure the primary account is selected to the currency you want to convert to. Then, select another account when entering an amount, and convert the amount back to the primary account with one tap.</p>
+            <p>In the example below, 'Bank (USD)' is our primary account, and we want to convert 50 EUR to USD using the conversion rate. We can do this by selecting 'Other (EUR)' and tapping the conversion button.</p>
+            <img src="./assets/faq/convert-currency.png" class="small"/>
+            <p>Using the currency conversion button will allow you to store the converted currency using the conversion rate at the current point in time, and to the target account's currency rate. Therefore if the currency rate changes, the converted amount will not since it has already been converted and stored in the transaction at that point in time.</p>
+            <h4 id="custom-currencies">Custom Currencies</h4>
+            <p>You can customize the currency conversion rates by heading to <em>More</em>, <em>Accounts</em>, <em>Exchange Rates</em>. If a custom currency is not set, exchange rates are used and updated daily from <a href="https://github.com/fawazahmed0/exchange-api">https://github.com/fawazahmed0/exchange-api</a>.</p>
+            <img src="./assets/faq/edit-accounts.png" class="small"/>
+          </div>
+        </details>
+
+        <details id="import-csv-data">
+          <summary>
+            <div class="summary-with-icon"><img src="./assets/faq/icons/import-csv.svg">Importing CSV / Excel / External Data</div>
+          </summary>
+          <div>
+            <p>You can import a CSV (Excel) file list of transactions into Cashew. You can import data in Cashew by heading to <em>More</em>, <em>Settings & Customization</em>, and scrolling down to "Import & Export". </p>  
+            <p>To import external data into Cashew from other applications you will need to be able to extract data that can be manipulated into a CSV file Cashew understands. To do this use the provided import templates:</p>
+            <h4 id="csv-template">Utilize Provided Templates</h4>
+            <p>Use the provided CSV templates within the app for importing data. You may need to copy your data using Sheets or Excel into the template from an existing CSV file to the respective columns (especially if migrating from another application) to ensure the template format is used. This ensures a unified format that Cashew can understand. <i>Extra information below is provided on specific formatting of certain types of data.</i></p>
+            <img src="./assets/faq/import-templates.png"/>
+            <p><i>To use the <a href="https://docs.google.com/spreadsheets/d/1Eiib2fiaC8SNdau8T8TBQql-wyWXVYOLJY-7Ycuky4I/edit">Google Sheet template</a>, please make a copy before adding your transaction data. Follow <a href="https://support.google.com/docs/answer/49114?hl=en&co=GENIE.Platform%3DDesktop#zippy=%2Cmake-a-copy-of-a-file#:~:text=Make%20a%20copy%20of%20a%20file">this guide</a> on how to make a copy of a Google Sheet.</i></p>
+            <div class="img-wide"><img src="./assets/faq/sample-excel.png"/></div>
+            <h4 id="import-method">Choose Import Method</h4>
+            <p>You can import data in two ways:</p>
+            <ul>
+              <li>Using a CSV file locally</li>
+              <li>Providing a link to a shared Google Sheet</li>
+            </ul>
+            <p><i>Note: An import cannot be undone. Make sure to keep a backup of your data to revert an import. See: <a target="_blank" href="#backups">Cloud and Local Backups</a></i></p>
+            <h4 id="csv-extra-info">Extra Importing Details and CSV Format</h4>
+              <div class="sub-info">
+                <h4 id="csv-income-expense">Income / Expenses</h4>
+                <p>When importing income, use a positive amount; for expenses, use a negative amount.</p>
+                <h4 id="csv-date-parsing">Date Parsing</h4>
+                <p>Cashew will attempt date parsing in various formats, but the official CSV format for dates provided in the templates is recommended for accuracy.</p>
+                <h4 id="csv-subcategories">Importing Subcategories</h4>
+                <p>The corresponding subcategories must exist in Cashew before the import occurs. If there is an existing subcategory, Cashew will prioritize that subcategory over creating a default category with that name when importing. Therefore, subcategories can be imported using the 'category' column.</p>
+                <p><i>Note: As an alternative, after importing, missing categories will automatically be created as main categories. These main categories can be converted into subcategories: edit the category, and select "Convert Into Subcategory".</i></p>
+                <h4 id="csv-transfer">Importing Transfer Transactions</h4>
+                <p>To import transfers, your export source (original application) needs to be able to convert transfer transactions into single income/expense transactions. A single transfer would consist of 2 transactions, an outgoing account and incoming account transaction. This would be the universal format. Once this is done, Cashew can import the transactions. These imported transfer transactions should be under one 'category'. Now merge these transactions with <em>Merge Category</em> into the <em>Balance Correction</em> category within Cashew. </p>
+                <p><em>Note: the 'Balance Correction' category may not exist. It is automatically created when at least one transfer or balance correction is made within Cashew. So if it is missing, create a transfer or balance correction on an account.</em></p>  
+              </div>
+            </div>
+        </details>
+
+        <details id="home-customization">
+          <summary>
+            <div class="summary-with-icon"><img src="./assets/faq/icons/home.svg">Home Page Customization</div>
+          </summary>
+          <div>
+            <p>
+              Cashew's Home page is fully customizable. Choose which sections to display (graphs, budgets, balances, heatmaps, pie charts, recent transactions, etc.), and control their order and visibility.
+            </p>
+            <p>
+              To edit the home page, on the Home page, tap the three-dot menu in the upper-right corner.
+            </p>
+            <img src="assets/faq/customize-home-shortcut.png" class="small"/>
+            <p><em>Tip: You can hide the home page completely by <a target="_blank" href="#customizing-tab-pages">customizing the bottom navigation bar tab pages</a></em>.</p>
+
+            <h4 id="layout-and-visibility">Customizing the Layout &amp; Visibility</h4>
+            <p>
+              On the <em>Edit Home</em> page:
+            </p>
+            <ul>
+              <li><strong>Reorder:</strong> tap-and-hold a section, drag to a new position, then release.</li>
+              <li><strong>Show/Hide:</strong> toggle the switch for each section.</li>
+            </ul>
+            <img src="./assets/faq/net-worth-settings2.png">
+
+            <h4 id="section-options">Section Options</h4>
+            <p>
+              Tap any section on the <em>Edit Home</em> page to configure its settings. Alternatively, long-press a section directly on the Home page to open the same menu.
+            </p>
+
+            <h4 id="select-accounts-for-net-worth">Net Worth Accounts</h4>
+            <p>
+              To select the accounts included for the Net Worth calculation on the home page: open the <em>Edit Home</em> page, and select the <em>Net Worth</em> section. Here you can select which accounts to be included in the Net Worth calculation and the calculation's time range. By default, all accounts are included.
+            </p>
+            <img src="./assets/faq/net-worth-settings.png" class="small" alt="Net Worth section settings"/>
+
+            <h4 id="date-range">Statistics Date Range</h4>
+            <p>
+              Most statistic home page sections support a custom date range. On the <em>Edit Home</em> page, tap the section and set its date range.
+            </p>
+            <img src="./assets/faq/custom-time-ranges.png" class="small" alt="Custom date range options"/>
+
+            <h4 id="primary-account">Primary Account</h4>
+            <p>
+              In account list sections on the Home page, the selected account is the <a target="_blank" href="#accounts-primary">Primary Account</a>. You can quickly switch the <strong>Primary Account</strong> by selecting it in the account list. This account is the default for new transactions and defines the app's base currency - see <a target="_blank" href="#accounts-primary">Primary Account</a>.
+            </p>
+          </div>
+        </details>
+
+        <details id="backups">
+                      
+          <summary>
+            <div class="summary-with-icon"><img src="./assets/faq/icons/cloud-backup.svg">Cloud and Local Backups</div>
+          </summary>
+          <div>
+            <p>Cashew offers 2 methods of backups: Google Drive Cloud Backups and Local Data File Backups. To create/import backups head to <em>More</em>, <em>Settings & Customization</em>, under the 'Backups' section. </p>
+            <p>A Cashew backup file is a direct copy of the current app's database. It captures all data at that point in time, containing all budget data, transaction data, application settings etc. The database can be opened with an external SQL viewer tool. Please be advised if the backup file is tampered with, it may not be able to be successfully imported back into Cashew.</p>
+            <p><i>Note: Keeping periodic backups keeps your data safe in the case of a corrupted file, accidental deletion, or if you need to restore your information on a new device.</i></p>
+            <p><i>Note: Restoring a backup will always overwrite all current data on target device. Before overwriting data, it is always recommended to keep an extra backup.</i></p>
+            <img src="./assets/faq/backups.png" class="small"/>
+            <p><em>Note: Exporting and Importing CSV files as backups is NOT recommended. Cashew does not export all app data nor does it import all app data when using CSV Importing and Exporting. For example, app settings are not exported to the CSV.</em></p>
+            <h4 id="local-backups">Local Backups</h4>
+            <p>To create a local backup, head to <em>More</em>, <em>Settings & Customization</em>, under the 'Backups' section, tap <em>Export Cashew Data File</em> and choose a location to save the backup file. Backups can be restored at any time.</p>
+            <p>To restore a local backup, head to <em>More</em>, <em>Settings & Customization</em>, under the 'Backups' section, tap <em>Import Cashew Data File</em> and choose the backup file.</p>
+            <h4 id="cloud-backups">Cloud Backups</h4>
+            <p>Cloud backups can be enabled by linking a Google Drive Account to Cashew. To login, go to <em>More</em> and tap <em>Login/Google Drive</em>. Once logged in, you can create a cloud backup, restore a cloud backup, manage device sync data, and manage cloud backup files. Cloud backups can also be downloaded and saved to the device as a local backup to be restored at any time.
+            </p> 
+            <img src="./assets/faq/cloud-backup-page.png" class="small"/>
+            <p>Automatic cloud backups are enabled by default and will create periodic backups on login. You must be logged in for Cashew to create these automatic backups.</p>
+            <img src="./assets/faq/auto-backups.png" class="small"/>
+            
+            <p><i>Note: All cloud backups are stored on your Google Account and the Cashew development team does not have access to any of this information - see <a href="/policy.html">Privacy Policy</a>.</i></p>
+            <h4 id="drive-permissions">Google Drive Permissions</h4>
+            <p>Since cloud backups require Google Drive, you must provide Cashew permission to create and manage its own application data on your Google Drive. If this permission is revoked, you may receive <i>Error 403: Request had insufficient authentication scopes</i>.</p>
+            <p>For cloud backups, Cashew uses an application data folder inside your Google Drive and <b>does not</b> have access to any other files. The application data folder is a special hidden folder that Cashew uses to store application-specific data and backups.</p>
+            <h4 id="access-drive-data">Accessing Cashew's Google Drive Cloud Data</h4>
+            <p>Any connected app data is not available to be viewed by users using Google Drive directly. This is to ensure app data does not get tampered with and is a <a href="https://developers.google.com/drive/api/guides/appdata">limitation imposed by Google</a>. You can only remove all your app data through Google Drive management, not view it. If you need to download a backup stored on your drive, Cashew allows you to download these backups within the app itself.</p>
+          </div>
+        </details>
+
+
+        <details id="delete-all-data">
+          <summary>
+            <div class="summary-with-icon"><img src="./assets/faq/icons/delete-all.svg">Deleting All Data</div>
+          </summary>
+          <div>
+            <p>To delete all data in the app, go to <em>More</em>, <em>About Cashew</em>, and scroll down to find <em>Delete All Data</em>.</p>
+            <img src="./assets/faq/delete-all-data.png"/>
+            <p>This process will prompt you to delete sync data if you do not want it to be restored upon login.</p>
+            <p>After logging in again, Cashew will attempt to restore sync backups. If you do not want your synced devices to be restored, you will need to delete them. Navigate to the account page, tap on <em>Sync/Devices</em>, and delete the sync backups.</p>
+            <img src="./assets/faq/sync-data.png" class="small"/>
+            <img src="./assets/faq/delete-sync-data.png" class="small"/>
+            <h4 id="delete-sync-data">Deleting Cashew's Google Drive Cloud Data</h4>
+            <p>Google Drive is used by Cashew to store sync data and cloud backups. This data is stored and connected to your personal Google account - the Cashew development team does not have access to this data, and therefore it will need to be deleted manually by the user. </p>
+            <p>To delete all hidden Cashew sync and backup data through Google Drive:</p>
+            <ol>
+              <li>First note this will delete <b>ALL</b> cloud backups before proceeding.</li> 
+              <li>Open a web browser (<b>NOT</b> the application or mobile website) and visit <a href="https://drive.google.com/drive/u/0/settings">https://drive.google.com/drive/u/0/settings</a> while logged in to the Google account you use with Cashew.</li>
+              <li>Go to the <em>Manage Apps</em> tab.</li>
+              <li>Locate 'Cashew'.</li>
+              <li>Click on <em>Options</em>.</li>
+              <li>Select <em>Delete hidden app data</em>.</li>
+            </ol>
+            <div class="img-wide"><img src="./assets/faq/delete-drive-data.png"/></div>
+          </div>
+        </details>
+        
+        <div class="centered-contact">
+          <p class="center-paragraph">
+            Questions? Feel free to reach out on email:
+            <a class="email" href="mailto:dapperappdeveloper@gmail.com">dapperappdeveloper@gmail.com</a>
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

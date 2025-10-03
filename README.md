@@ -15,3 +15,10 @@ You can check out the website here: https://cashewapp.web.app/.
 ---
 
 For the Cashew application source repository, check it out here: https://github.com/jameskokoska/Cashew.
+
+## Website Deployment
+To deploy to Firebase:
+
+```bash
+firebase deploy
+```

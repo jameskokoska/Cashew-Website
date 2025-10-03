@@ -1,0 +1,75 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [ "HCL9V2D3XY.com.budget.tracker-app"],
+        "components": [
+          {
+            "/": "/addTransfer",
+            "comment": "Add a transfer between accounts with data"
+          },
+          {
+            "/": "/addTransferRoute",
+            "comment": "Start the transfer route with prefilled data"
+          },
+          {
+            "/": "/correctTotalBalance",
+            "comment": "Correct the total balance of an account with data"
+          },
+          {
+            "/": "/correctTotalBalanceRoute",
+            "comment": "Start the correct total balance route with prefilled data"
+          },
+          {
+            "/": "/addTransaction",
+            "comment": "Add a transaction with data"
+          },
+          {
+            "/": "/addTransactionRoute",
+            "comment": "Start the add transaction route with prefilled data"
+          },
+          {
+            "/": "/addTransactionPage",
+            "comment": "Open the Add Transaction Page"
+          },
+          {
+            "/": "/addTransferPage",
+            "comment": "Open the Transfer Balance Page"
+          },
+          {
+            "/": "/searchTransactionsPage",
+            "comment": "Open the Search Transactions Page"
+          },
+          {
+            "/": "/notificationSettingsPage",
+            "comment": "Open the Notification Settings Page"
+          },
+          {
+            "/": "/allSpendingPage",
+            "comment": "Open the All Spending Page"
+          },
+          {
+            "/": "/allSpendingPageNetWorthFiltered",
+            "comment": "Open the All Spending Page with the associated Net Worth filters applied"
+          },
+          {
+            "/": "/budgetPage",
+            "comment": "Open the Budget Page"
+          },
+          {
+            "/": "/transactionPage",
+            "comment": "Open the Transaction Page"
+          },
+           {
+            "/": "/upcomingOverdueTransactionsPage",
+            "comment": "Open the Upcoming/Overdue Transactions Page"
+          },
+          {
+            "/": "/walletPage",
+            "comment": "Open the Wallet/Accounts Page"
+          }
+        ]
+      }
+    ]
+  }
+}

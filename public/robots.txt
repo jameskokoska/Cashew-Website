@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://cashewapp.web.app/sitemap.xml
