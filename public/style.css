@@ -880,6 +880,10 @@ details img{
   border-radius: 15px;
 }
 
+details img.tiny{
+  width: calc(min(300px, 75%) - 25px) !important;
+}
+
 details img.small{
   width: calc(min(500px, 100%) - 25px) !important;
 }
