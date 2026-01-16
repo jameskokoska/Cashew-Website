@@ -2,7 +2,9 @@
   "applinks": {
     "details": [
       {
-        "appIDs": [ "HCL9V2D3XY.com.budget.tracker-app"],
+        "appIDs": [
+          "HCL9V2D3XY.com.budget.tracker-app"
+        ],
         "components": [
           {
             "/": "/addTransfer",
@@ -25,7 +27,15 @@
             "comment": "Add a transaction with data"
           },
           {
+            "/": "/addTransaction/*",
+            "comment": "Add a transaction with data"
+          },
+          {
             "/": "/addTransactionRoute",
+            "comment": "Start the add transaction route with prefilled data"
+          },
+          {
+            "/": "/addTransactionRoute/*",
             "comment": "Start the add transaction route with prefilled data"
           },
           {
@@ -60,7 +70,7 @@
             "/": "/transactionPage",
             "comment": "Open the Transaction Page"
           },
-           {
+          {
             "/": "/upcomingOverdueTransactionsPage",
             "comment": "Open the Upcoming/Overdue Transactions Page"
           },
