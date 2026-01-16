@@ -107,12 +107,12 @@
           <summary>Tracking Credit Card Spending</summary>
           <div>
             <h4 id="track-credit-intro">Tracking Credit Spending</h4>
-            <p>Create a separate account specifically for tracking credit card spending. Every time you make a purchase using that credit card, you would add a transaction to that account. You can transfer amounts between accounts to add credit card payments or apply a balance correction.</p>
+            <p>Create a separate account specifically for tracking credit card spending. Every time you make a purchase using that credit card, you would add a transaction to that account. You can transfer amounts between accounts to add credit card payments or apply a <a target="_blank" href="#balance-corrections">Balance Correction</a>.</p>
             <img src="./assets/faq/create-balance-correction-transfer-balance.png"/>            
             
             <h4 id="credit-card-statement">Credit Card Statement</h4>
             <p>In the "Account Details" page (tapping the account twice on the homepage account switcher sections), set the cycle time range for reports to reflect the spending from your credit card statement.</p>
-            <p>Utilize the "All Spending" page to view past spending ranges associated with your credit card account. You can apply filters to only select that account.</p>
+            <p>Utilize the "All Spending Summary" page to view past spending ranges associated with your credit card account. You can apply filters to only select that account.</p>
             
             <h4 id="credit-card-budget">Credit Card Budget</h4>
             <p>Create a new budget with a set limit, and set the account to the respective credit card account. You can set the start date to the date of your statement so that the totals within the budget history will match that of your statement. Pay attention to the set period dates - this will repeat automatically for the set time range.</p>
@@ -123,6 +123,7 @@
         <details id="transferring-between-accounts">
           <summary>Transferring Funds Between Accounts</summary>
           <div>
+            <p>When a transfer is made, two <a target="_blank" href="#balance-corrections">Balance Correction</a> transactions are created: an account <i>transfer out</i> and an account <i>transfer in</i>. Each is a separate transaction and can be edited individually at any time in the transactions list. The net total of a transfer is 0.</p>
             <p><em>Note: you will need more than one account created within Cashew</em></p>
             <h4 id="create-transfer">Creating a Transfer</h4>
             <p>When there is more than one account created within Cashew, Cashew allows you to transfer funds. There are three primary ways of opening the transfer popup:</p>
@@ -136,6 +137,8 @@
             </ul>
             <h4 id="repetitive-transfers">Repetitive Transfers</h4>
             <p>You can create a repetitive transfer by first adding a transfer transaction, then editing it to a 'repetitive' or 'upcoming' transaction type. Cashew will prompt you to change both transfer transactions and the transfer will behave as such.</p>
+            <h4 id="transfers-goals-loans">Transferring Funds to Goals or Loans</h4>
+            <p>After creating a transfer, it creates 2 transactions - a <i>transfer in</i> and a <i>transfer out</i>. You can edit these transactions and add the respective <i>transfer in</i> or <i>transfer out</i> transaction to any goal/loan. Alternatively, you can manually create a transaction with the <a target="_blank" href="#balance-corrections">Balance Correction</a> category emulating a transfer.</p>
           </div>
         </details>
 
@@ -202,8 +205,7 @@
         <details id="upgrade-to-cashew-pro-lifetime">
           <summary>Upgrading to Cashew Pro Lifetime from a Subscription</summary>
           <div>
-            <p>To upgrade to Cashew Pro Lifetime from a subscription you will need to cancel your current subscription. Once the term ends, you will be able to purchase Cashew Pro Lifetime; or any other subscription option. This is to ensure each user gets the full term of Cashew Pro they have paid for.</p>
-            <!-- <p>If a Cashew Pro license is cancelled or expired and a user has utilized premium features, those features will not be removed. For instance, if a user has multiple budgets, the budgets will remain intact. However, new budgets cannot be made.</p> -->
+            <p>To upgrade to Cashew Pro Lifetime from a subscription you will need to cancel your current subscription. Data will not be lost/modified based on the status of the Cashew Pro subscription. Once the term ends, you will be able to purchase Cashew Pro Lifetime; or any other subscription option. This is to ensure each user gets the full term of Cashew Pro they have paid for.</p>
           </div>
         </details>
 
@@ -425,10 +427,10 @@
             </ul>
             <img src="./assets/faq/budget-type-options.png"/>
             <h4 id="budget-parameters">General Budget Parameters</h4>
-            <p>You can select if you want to budget for savings (positive cash flow, such as income) or budget for negative cash flow, such as expenses. Each budget has a name, color, amount, and the start day and period. </p>
+            <p>You can select if you want to budget for savings (positive cash flow, such as income) or budget for negative cash flow, such as expenses. Each budget has a name, color, amount/limit/target, and the start day and period which outlines the cycle. </p>
             <h4 id="budget-cycle">Cycles and Time Periods</h4>
-            <p>The cycle of a budget will always reset and past budget periods can be viewed. If you want a monthly repetitive budget to start on the 21st of the month, select any date with the day of the 21 (e.g., September 21) and [ <b>/ 1 month</b> ] as the time frame. Cashew will show you the current period based on the current date from the start date you set.</p>
-            <p>To set a custom time period for a budget, change the time frame from the default [ <b>month</b>]  to [ <b>custom</b> ]. Custom time periods do not repeat.</p>
+            <p>The cycle of a budget will always repeat and reset its cycle (unless the budget type is set to <i>Custom</i>). Past budget periods can be viewed once the cycle has elapsed by viewing the budget <a target="_blank" href="#budget-view-history">History</a>. If you want a monthly repetitive budget to start on the 21st of the month, select any date with the day of the 21 (e.g., September 21) and [ <b>/ 1 month</b> ] as the time frame. Cashew will use the current period based on the current date from the start date you set.</p>
+            <p>To set a <i>Custom</i> time period for a budget, change the time frame from the default [ <b>month</b>]  to [ <b>custom</b> ]. Custom time periods do not repeat. If you want full control over each budget time period and budget amount, use <a target="_blank" href="#budget-period-amounts">multiple custom time period budgets</a>.</p>
             <img src="./assets/faq/example-budget.png" class="small"/>
             <p>To set the period, you can choose a custom budget period (a time range between 2 dates) or an automatically recurring cycle, such as every 2 weeks, or every month.</p>
             <h4 id="budget-filters">"All Transactions" Budget Filters</h4>
@@ -449,9 +451,13 @@
             <img src="./assets/faq/budget-graph.png" class="small"/>
 
             <h4 id="budget-view-history">Viewing Past Budget Periods</h4>
-            <p>You can tap the history icon to see past budget period breakdowns. You can only view the history of non-custom period budgets.</p>
+            <p>You can tap the history icon to see past budget period breakdowns. You can only view the history of non-custom period budgets, since custom time period budgets do not repeat their cycle.</p>
             <img src="./assets/faq/budget-history-button.png" class="small"/>
             <img src="./assets/faq/budget-history.png"/>
+
+            <h4 id="budget-period-amounts">Separate Budget Amount per Period</h4>
+            <p>A budget can only have one set target and it applies to all periods. You can change the budget amount at any time, it will just apply to previous periods as well. This is to encourage stable and healthy spending habits. However, Cashew still allows you to have full control of each time period if you wish. If you want to individually track each period, you can create multiple <i>custom time period</i> budgets - each with a separate budget amount for the specified custom time period. </p>
+            <p>You can make a copy of a <i>custom time period</i> budget by editing an existing <i>custom time period</i> budget and tapping the "copy" button in the top right corner. This allows you to quickly customize a copy for a new period.</p>
 
             <h4 id="budget-manage">Creating, Editing, Archiving, and Managing Budgets</h4>
             <p>
@@ -488,6 +494,7 @@
             <h4 id="goals-contribute">Contributing to a Goal</h4>
             <p>When adding or editing a transaction, assign it to the goal by selecting the goal in the Add/Edit Transaction page.</p>
             <p>Automate recurring contributions with repetitive/upcoming transactions - see <a target="_blank" href="#future-repetitive-transactions">Future Repetitive Transactions and Automatic Payments</a>.</p>
+            <p>To transfer an amount from accounts to a goal, see <a target="_blank" href="#transfers-goals-loans">Transferring Funds to Goals</a>.</p>
 
             <h4 id="goals-separate-account">Tracking Without Affecting Main Account Balances</h4>
             <p>
@@ -670,8 +677,8 @@
             <p>To create a local backup, head to <em>More</em>, <em>Settings & Customization</em>, under the 'Backups' section, tap <em>Export Cashew Data File</em> and choose a location to save the backup file. Backups can be restored at any time.</p>
             <p>To restore a local backup, head to <em>More</em>, <em>Settings & Customization</em>, under the 'Backups' section, tap <em>Import Cashew Data File</em> and choose the backup file.</p>
             <h4 id="cloud-backups">Cloud Backups</h4>
-            <p>Cloud backups can be enabled by linking a Google Drive Account to Cashew. To login, go to <em>More</em> and tap <em>Login/Google Drive</em>. Once logged in, you can create a cloud backup, restore a cloud backup, manage device sync data, and manage cloud backup files. Cloud backups can also be downloaded and saved to the device as a local backup to be restored at any time.
-            </p> 
+            <p>Cloud backups can be enabled by linking a Google Drive Account to Cashew. To login, go to <em>More</em> and tap <em>Login/Google Drive</em>. Once logged in, you can create a cloud backup, restore a cloud backup, manage device sync data, and manage cloud backup files. Cloud backups can also be downloaded and saved to the device as a local backup to be restored at any time.</p> 
+            <p>By default, only the latest 20 backups are stored on your Google Drive, with the oldest being deleted automatically. Each backup file is small and usually under 3 mb (0.003 GB) each.</p>
             <img src="./assets/faq/cloud-backup-page.png" class="small"/>
             <p>Automatic cloud backups are enabled by default and will create periodic backups on login. You must be logged in for Cashew to create these automatic backups.</p>
             <img src="./assets/faq/auto-backups.png" class="small"/>
