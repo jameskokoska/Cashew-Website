@@ -614,6 +614,18 @@ details h4 {
   margin-bottom: 10px;
 }
 
+.policy h3:not(.faq-header) {
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--light);
+  margin-top: 40px;
+}
+
+.policy h4{
+  font-size: 26px;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
 .policy li{
   font-size: 19px;
 }
@@ -628,8 +640,11 @@ details h4 {
   }
   .policy h3{
     font-size: 30px;
-    margin-top: 30px;
-    margin-bottom: 10px;
+  }
+  .policy h4{
+    font-size: 22px;
+    margin-top: 18px;
+    margin-bottom: 8px;
   }
   .policy li{
     font-size: 17px;
@@ -789,6 +804,30 @@ summary{
     margin: -24px 0px;
     margin-right: 8px;
   }
+}
+
+summary p{
+  font-size: 18px !important;
+  font-weight: normal !important;
+  opacity: 0.8;
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-top: 2px !important;
+}
+
+@media only screen and (max-width: 767px) {
+  summary p{
+    font-size: 15px !important;
+  }
+}
+
+.support-platforms{
+  float: right;
+  opacity: 0.5;
+  padding-left: 10px;
+  padding-right: 5px;
+  padding-top: 3px;
+  font-size: 15px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -997,4 +1036,11 @@ input[type=text]:focus {
     padding-top: 10px;
     border-radius: 0px;
   }
+}
+
+.section-header{
+  line-height: 0px !important;
+  font-size: 0px !important;
+  padding: 0px !important;
+  margin: 0px !important;
 }
