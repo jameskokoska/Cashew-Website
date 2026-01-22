@@ -673,22 +673,34 @@
             <p><i>Note: Restoring a backup will always overwrite all current data on target device. Before overwriting data, it is always recommended to keep an extra backup.</i></p>
             <img src="./assets/faq/backups.png" class="small"/>
             <p><em>Note: Exporting and Importing CSV files as backups is NOT recommended. Cashew does not export all app data nor does it import all app data when using CSV Importing and Exporting. For example, app settings are not exported to the CSV.</em></p>
+            
             <h4 id="local-backups">Local Backups</h4>
             <p>To create a local backup, head to <em>More</em>, <em>Settings & Customization</em>, under the 'Backups' section, tap <em>Export Cashew Data File</em> and choose a location to save the backup file. Backups can be restored at any time.</p>
             <p>To restore a local backup, head to <em>More</em>, <em>Settings & Customization</em>, under the 'Backups' section, tap <em>Import Cashew Data File</em> and choose the backup file.</p>
+            
             <h4 id="cloud-backups">Cloud Backups</h4>
             <p>Cloud backups can be enabled by linking a Google Drive Account to Cashew. To login, go to <em>More</em> and tap <em>Login/Google Drive</em>. Once logged in, you can create a cloud backup, restore a cloud backup, manage device sync data, and manage cloud backup files. Cloud backups can also be downloaded and saved to the device as a local backup to be restored at any time.</p> 
             <p>By default, only the latest 20 backups are stored on your Google Drive, with the oldest being deleted automatically. Each backup file is small and usually under 3 mb (0.003 GB) each.</p>
             <img src="./assets/faq/cloud-backup-page.png" class="small"/>
             <p>Automatic cloud backups are enabled by default and will create periodic backups on login. You must be logged in for Cashew to create these automatic backups.</p>
             <img src="./assets/faq/auto-backups.png" class="small"/>
+            <p><i>Note: All cloud backups are stored on your Google Account and the Cashew development team does not have access to any of this information - see <a href="./policy.html">Privacy Policy</a>.</i></p>
             
-            <p><i>Note: All cloud backups are stored on your Google Account and the Cashew development team does not have access to any of this information - see <a href="/policy.html">Privacy Policy</a>.</i></p>
             <h4 id="drive-permissions">Google Drive Permissions</h4>
             <p>Since cloud backups require Google Drive, you must provide Cashew permission to create and manage its own application data on your Google Drive. If this permission is revoked, you may receive <i>Error 403: Request had insufficient authentication scopes</i>.</p>
             <p>For cloud backups, Cashew uses an application data folder inside your Google Drive and <b>does not</b> have access to any other files. The application data folder is a special hidden folder that Cashew uses to store application-specific data and backups.</p>
+            
             <h4 id="access-drive-data">Accessing Cashew's Google Drive Cloud Data</h4>
             <p>Any connected app data is not available to be viewed by users using Google Drive directly. This is to ensure app data does not get tampered with and is a <a href="https://developers.google.com/drive/api/guides/appdata">limitation imposed by Google</a>. You can only remove all your app data through Google Drive management, not view it. If you need to download a backup stored on your drive, Cashew allows you to download these backups within the app itself.</p>
+
+            <h4 id="access-drive-data">Deleting Cashew's Google Drive Cloud Data</h4>
+            <p>See <a href="#delete-sync-data">Deleting Cashew's Google Drive Cloud Data</a>.</p>
+            
+            <h4 id="change-google-account">Changing the Google Account for Cloud Backups</h4>
+            <p>If you need to use a different Google account for cloud backups, open the <em>Login/Google Drive</em> page to access the account cloud backup page. From there, tap <i>logout</i>, and then log back in by opening the <em>Login/Google Drive</em> page again. When signing in again after logging out, you will be prompted to select which Google account to use.</p>
+            <p><em>Note: Logging out only disconnects Cashew from Google Drive. Your current app data will <b>not</b> be cleared when you log out.</em></p>
+            <p>Because your data remains on the device after logging out, logging in with a different Google account will allow you to continue using your existing Cashew data while storing future cloud backups and sync data under the newly signed-in Google account.</p>
+            <p>If you want to remove cloud backup/app data that was stored under the previous Google account, see <a href="#delete-sync-data">Deleting Cashew's Google Drive Cloud Data</a>.</p>
           </div>
         </details>
 

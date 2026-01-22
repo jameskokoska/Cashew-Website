@@ -1,5 +1,11 @@
 
 document.addEventListener("DOMContentLoaded", function() {
+  scrollToWebLocation()
+  initializeDetailsElements(document.querySelectorAll("details"));
+  initializeHeaderElements(document.querySelectorAll("details h4[id]"));
+});
+
+function scrollToWebLocation(){
   const id = window.location.hash.replace("#","");
   if (id) {
     const target = document.getElementById(id);
@@ -38,10 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   }
-
-  initializeDetailsElements(document.querySelectorAll("details"));
-  initializeHeaderElements(document.querySelectorAll("details h4[id]"));
-});
+}
 
 function initializeHeaderElements(headerElements){
   headerElements.forEach(h4 => {
@@ -221,3 +224,21 @@ function addDetailsCountToChips() {
 }
 
 document.addEventListener("DOMContentLoaded", addDetailsCountToChips);
+
+
+document.addEventListener("click", (e) => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a) return;
+
+  const href = a.getAttribute("href");
+  if (!href || href === "#") return;
+
+  const id = href.slice(1);
+  if (!id) return;
+
+  if (!document.getElementById(id)) return;
+  e.preventDefault();
+  history.pushState(null, "", href);
+
+  scrollToWebLocation();
+});
