@@ -288,6 +288,90 @@
         <div id="guides"></div>
         <h3 class="faq-header">Guides</h3>
 
+        <details id="beginner-guide">
+          <summary>
+            <div class="summary-with-icon"><img src="./assets/faq/icons/guide-book.svg">Quick Start Beginner Guide</div>
+          </summary>
+          <div>
+            <p>
+              Cashew is built to make budgeting feel easy: log spending quickly, then see it show up in your totals and budgets. This quick start guide stays intentionally surface-level. If you want the deeper options, check the full guides below this section.
+            </p>
+            <h4 id="bg-definitions">Quick Definitions</h4>
+            <ul>
+              <li>
+                <a href="#accounts"><strong>Account</strong></a> - where money lives (bank, cash, <a href="#track-credit-spending">credit card</a>, savings). Every transaction belongs to one account.
+              </li>
+              <li>
+                <a href="#accounts-primary"><strong>Primary Account</strong></a> - your main account. It's selected by default when adding transactions, and it sets the app's main currency currency used for totals and reports.
+              </li>
+              <li>
+                <a href="#categories"><strong>Category</strong></a> - what the transaction is for (Groceries, Rent, Paycheck). Categories power reports and budgets.
+              </li>
+              <li>
+                <strong>Transaction</strong> - one money event (income or expense) with an amount, date, account, and category.
+              </li>
+              <li>
+                <a href="#budgets"><strong>Budget</strong></a> - a limit (or target) over a time period that helps you track spending and stay on plan.
+              </li>
+            </ul>
+
+            <h4 id="bg-accounts">Step 1: Accounts</h4>
+            <ul>
+              <li>A default account is created for you when you first open Cashew.</li>
+              <li>Go to the <em>More</em> tab page, and Edit <em>Accounts</em> to manage them.</li>
+              <li>Tap an account to edit it (name, currency, color), or tap <strong>(+)</strong> to create a new one (Bank, Cash, <a href="#track-credit-spending">Credit Card</a>, etc.)</li>
+              <li>Set your main account as the <a ref="#accounts-primary">Primary Account</a> (the starred one). This is the default when adding transactions, and sets the app's main currency for totals. </li>
+            </ul>
+
+            <p>
+              Using multiple accounts (like Bank + <a href="#track-credit-spending">Credit Card</a>) is encouraged. If you move money between them, use a <a href="#transferring-between-accounts">transfer</a>.
+            </p>
+
+            <img src="./assets/faq/edit-accounts.png" class="small"/>
+
+            <h4 id="bg-budget">Step 2: A Simple Budget</h4>
+            <ul>
+              <li>A default budget may already exist if you entered an initial budget amount during setup.</li>
+              <li>Go to the <em>More</em> tab page, and Edit <em>Budgets</em> to manage them.</li>
+              <li>Tap a budget to edit it (name, amount, color, time period), or tap <strong>(+)</strong> to create a new one.</li>
+              <li>Want more details? See the <a href="#budgets">full budgets guide</a>.</li>
+            </ul>
+
+            <p>
+                The default budget type (<i>All Transactions</i>) automatically tracks spending (and/or income) by including transactions that match your budget's specifications. You don't need to manually add transactions - it updates itself as you create transactions. To control what transactions are included by default (like categories or accounts), edit the budget and its <a href="#budget-filters">filters</a>.
+            </p>
+
+            <img src="./assets/faq/edit-budgets.png" class="small"/>
+
+            <h4 id="bg-add-transactions">Step 3: Adding transactions</h4>
+            <ul>
+              <li>Tap the <strong>(+)</strong> button on the main page.</li>
+              <li>You will be prompted to enter a <i>Title</i>, to select a <i>Category</i>, and enter an <i>Amount</i>.
+              <li>Tap outside to close the sequence of questions at any time and fill in the transaction details manually.</li>
+              <li>Create the transaction once completed - your totals and budget numbers update automatically.</li>
+            </ul>
+
+            <img src="./assets/faq/add-button.png" class="small"/>
+
+            <h4 id="bg-budget-insights">Step 4: Budget Insights</h4>
+            <ul>
+              <li>Open your budget to see your transactions counted (as long as they match that budget's filters).</li>
+              <li>Check if you're on track using the <a href="#budget-reading-graph">budget spending graph</a>.</li>
+              <li>Use the pie chart to easily identify your biggest spending categories.</li>
+              <li>Use the <a href="#budget-view-history">budget history</a> to compare this period with past ones.</li>
+            </ul>
+
+            <p>As you log transactions, your totals, charts, and budget insights will naturally fill in. Keep up a good habit!</p>
+            
+            <img src="./assets/faq/budget-container.png" class="small"/>
+
+            <p>
+              That's the core flow: <strong>Account</strong> → <strong>Transaction</strong> → <strong>Budget</strong> → <strong>Insights</strong>.
+              If you ever get stuck, the guides below cover everything in detail. Cashew is designed so features reveal themselves as you need them - start simple, and explore the expansive feature set over time.
+            </p>
+          </div>
+        </details>
+
         <details id="accounts">
           <summary>
             <div class="summary-with-icon"><img src="./assets/faq/icons/accounts.svg">Accounts</div>
@@ -434,7 +518,7 @@
             <img src="./assets/faq/example-budget.png" class="small"/>
             <p>To set the period, you can choose a custom budget period (a time range between 2 dates) or an automatically recurring cycle, such as every 2 weeks, or every month.</p>
             <h4 id="budget-filters">"All Transactions" Budget Filters</h4>
-            <p>For an <em>all transactions</em> budget, you can select the transactions to automatically include. For example, if you would like to include income in an expense budget (which will decrease the total spend, since the opposite polarity of transactions are included), you can select <em>Income</em> under <em>Transactions to Include</em>. Tap the (i) to read about each <em>Transactions to Include</em> filter. You can also select which categories to include or exclude from an all transactions budget.</p>
+            <p>For an <em>all transactions</em> budget, you can select the transactions to automatically include. For example, if you would like to include income in an expense budget (which will decrease the total spend, since the opposite polarity of transactions are included), you can select <em>Income</em> under <em>Transactions to Include</em>. Tap the (i) to read about each <em>Transactions to Include</em> filter. You can also select which categories to include or exclude from an all transactions budget, along with which accounts of transactions to be included.</p>
             <img src="./assets/faq/transactions-to-include.png"/>
             <h4 id="budget-exclude-transactions">Excluding Transactions From "All Transactions" Budget</h4>
             <p>Each transaction can also be manually excluded from an all transactions budget. To do this, edit the transaction of interest, scroll down, tap <em>More Options</em>, and select the budget you would like to exclude this transaction from.</p>

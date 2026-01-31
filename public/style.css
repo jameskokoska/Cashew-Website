@@ -893,7 +893,8 @@ details h4{
 }
 
 details .sub-info h4{
-  font-size: 18px;
+  font-size: 20px;
+  margin-top: 5px;
 }
 
 details .sub-info p{
@@ -902,7 +903,6 @@ details .sub-info p{
 
 details .sub-info{
   padding-left: 10px;
-  padding-top: 6px;
 }
 
 details ul, ol{

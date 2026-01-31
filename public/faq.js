@@ -39,7 +39,7 @@ function scrollToWebLocation(){
           setTimeout(() => {target.scrollIntoView({ behavior: "instant" }); }, 50);
           setTimeout(() => {target.scrollIntoView({ behavior: "instant" }); }, 100);
         }catch(e){
-          console.log(e)
+          target.scrollIntoView({ behavior: "auto", block: "start" }, 50);
         }
       }
     }
