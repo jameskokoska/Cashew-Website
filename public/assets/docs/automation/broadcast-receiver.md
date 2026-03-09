@@ -8,11 +8,11 @@ To use this feature with [Automate (free)](https://play.google.com/store/apps/de
 
 1) Create a new Flow by pressing (+)
 2) Attach a `Broadcast send` block to the `Flow beginning` block
-    * <img src="/public/assets/docs/automation/images/automate-1.png" class="tiny"/>
+    * <img src="assets/docs/automation/images/automate-1.png" class="tiny"/>
 3) Tap the `Broadcast send` block to edit it.
     * Tap `Pick Receiver` and select the `Cashew`:`com.budget.tracker_app.UriReceiver`. You can search for this by tapping the magnifying glass in the picker.
     * In the `Data URI` field, add an app link that you would like Cashew to parse, such as `https://cashewapp.web.app/addTransactionRoute?amount=123`. This will add a transaction with an amount of "123".
-    * <img src="/public/assets/docs/automation/images/automate-2.png" class="tiny"/>
+    * <img src="assets/docs/automation/images/automate-2.png" class="tiny"/>
 4) To run the automation, tap the back arrow, and tap `Start`. This will send the app link to Cashew without opening the application.
 
 > [!TIP]

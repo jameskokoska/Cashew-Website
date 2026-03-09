@@ -12,7 +12,7 @@ To setup the inbox:
 2) Set the sharing permissions to `anyone with the link can view`, 
 3) Copy the shared link into Cashew. 
 
-<img src="/public/assets/docs/automation/images/mailbox-inbox.png" class="tiny"/>
+<img src="assets/docs/automation/images/mailbox-inbox.png" class="tiny"/>
 
 Now you can open the Inbox to see the transactions parsed from the external Google Sheet. Tap a transaction to quickly add it to your transactions list. You can also add a `Home Page Inbox Shortcut` to quickly access the inbox from the Cashew home page, in the home page header.
 
@@ -25,7 +25,7 @@ To setup the Outbox:
     * Allow Cashew to write files to your Google Drive
 2) Restart the app to trigger an outbox creation when the app is launched.
 
-<img src="/public/assets/docs/automation/images/mailbox-outbox.png" class="tiny"/>
+<img src="assets/docs/automation/images/mailbox-outbox.png" class="tiny"/>
 
 The exported CSV of transactions will be available in the Cashew folder in your Google Drive and will be periodically updated. 
 

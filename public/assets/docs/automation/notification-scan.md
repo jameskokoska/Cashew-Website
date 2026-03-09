@@ -8,14 +8,14 @@ This feature allows you to automatically create transactions from received exter
 2) Add a new `Configuration` by tapping the (+) under `Configurations`
     * Give the configuration a name, such as "Bank"
     * Setup the default category, account, and/or title (optional)
-    * <img src="/public/assets/docs/automation/images/notif-scanning-configuration.png" class="tiny"/>
+    * <img src="assets/docs/automation/images/notif-scanning-configuration.png" class="tiny"/>
 
 3) Setup notification parsing for the configuration
     * Within the configuration, press `Select a Notification` to setup the parser and select a notification from the application you are trying to parse from 
     * Select the "subject" of the selected notification. All notifications that contain that text will be parsed by this configuration. Tap `Next` when complete.
     * Then, select the "amount" of the transaction within the notification. Tap `Next` when complete.
     * Then, select the "title" of the transaction within the notification. This is optional, tap `Next` or `Skip` when complete.
-    * <img src="/public/assets/docs/automation/images/notif-scanning-parsing-selection.png" class="tiny"/>
+    * <img src="assets/docs/automation/images/notif-scanning-parsing-selection.png" class="tiny"/>
 
 Now when a notification is posted to your system, Cashew will save it in the background. When the application is opened, Cashew will parse the message to see if it matches the set configuration.
 

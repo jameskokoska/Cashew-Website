@@ -7,16 +7,16 @@ iOS 17 introduced Transaction Triggers in the Shortcuts app. This allows automat
     * Select the cards and categories to monitor, all can be selected
     * Check `Run Immediately` to bypass manual confirmation
     * <div class="img-scroll-container">
-        <img src="/public/assets/docs/automation/images/siri-shortcuts-1.png" class="tiny"/>
-        <img src="/public/assets/docs/automation/images/siri-shortcuts-2.png" class="tiny"/>
-        <img src="/public/assets/docs/automation/images/siri-shortcuts-3.png" class="tiny"/>
+        <img src="assets/docs/automation/images/siri-shortcuts-1.png" class="tiny"/>
+        <img src="assets/docs/automation/images/siri-shortcuts-2.png" class="tiny"/>
+        <img src="assets/docs/automation/images/siri-shortcuts-3.png" class="tiny"/>
     </div>
    
 2) Create the shortcut
     * Choose `Create New Shortcut` and add the Cashew `Add Transaction` action
     * <div class="img-scroll-container">
-        <img src="/public/assets/docs/automation/images/siri-shortcuts-4.png" class="tiny"/>
-        <img src="/public/assets/docs/automation/images/siri-shortcuts-5.png" class="tiny"/>
+        <img src="assets/docs/automation/images/siri-shortcuts-4.png" class="tiny"/>
+        <img src="assets/docs/automation/images/siri-shortcuts-5.png" class="tiny"/>
     </div>
 
 3) Configure the shortcut input
@@ -24,9 +24,9 @@ iOS 17 introduced Transaction Triggers in the Shortcuts app. This allows automat
     * Set `Title` to `Shortcut Input` → `Merchant`. To do this, tap the Title text input field → `Select Variable` → Scroll up and tap `Shortcut Input`. Then tap the `Shortcut Input` in the Amount text input field → Select `Merchant`.
     * Configure all other fields as you wish
     * <div class="img-scroll-container">
-        <img src="/public/assets/docs/automation/images/siri-shortcuts-6.png" class="tiny"/>
-        <img src="/public/assets/docs/automation/images/siri-shortcuts-7.png" class="tiny"/>
-        <img src="/public/assets/docs/automation/images/siri-shortcuts-8.png" class="tiny"/>
+        <img src="assets/docs/automation/images/siri-shortcuts-6.png" class="tiny"/>
+        <img src="assets/docs/automation/images/siri-shortcuts-7.png" class="tiny"/>
+        <img src="assets/docs/automation/images/siri-shortcuts-8.png" class="tiny"/>
     </div>
     * Tap the Checkmark when completed. Changes can be made later by editing the shortcut from the `Automation` tab.
 
