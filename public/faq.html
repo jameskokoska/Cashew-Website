@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="markdown-styles.css">
     <script src="syonyms.js"></script>
     <script src="faq.js"></script>
+    <script src="markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
     <title>Cashew - Guides & FAQ</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     
@@ -26,7 +30,7 @@
   <body>
     <div class="header">
       <a href="./index.html">Home</a>
-      <a href="./policy.html">Terms and Privacy</a>
+      <a href="./policy.html">Terms & Privacy</a>
     </div>
     <div class="policy-wrap">
       <div class="policy faq-width-limit">
@@ -39,6 +43,7 @@
         
         <div class="chip-section">
           <a href="#guides"><div class="chip"><p>Guides</p></div></a>
+          <a href="#automation"><div class="chip"><p>Automation</p></div></a>
           <a href="#pro-tips"><div class="chip"><p>Pro Tips</p></div></a>
           <a href="#faq"><div class="chip"><p>FAQ</p></div></a>
         </div>
@@ -278,10 +283,10 @@
           </div>
         </details>
 
-        <details id="app-links">
-          <summary>App Links: Create Transactions Automatically</summary>
+        <details id="about-automation">
+          <summary>Create Transactions Automatically</summary>
           <div>
-            <p>To create transactions automatically, you can use the App Links API. The full documentation can be found here: <a href="https://github.com/jameskokoska/Cashew?tab=readme-ov-file#app-links">https://github.com/jameskokoska/Cashew?tab=readme-ov-file#app-links</a>.</p>
+            <p>To create transactions automatically, refer to the <a href="#automation">Automation section</a>.</p>
           </div>
         </details>
 
@@ -813,6 +818,78 @@
               <li>Select <em>Delete hidden app data</em>.</li>
             </ol>
             <div class="img-wide"><img src="./assets/faq/delete-drive-data.png"/></div>
+          </div>
+        </details>
+
+        <div id="automation"></div>
+        <h3 class="faq-header">Automation</h3>
+        <p style="margin-top: -15px; margin-bottom: 15px;">Please use the <a href="https://github.com/jameskokoska/Cashew/issues/725" target="_blank">public beta</a> for full support of automation features.</p>
+
+        <details id="app-links">
+          <summary>
+            App Links <span class="support-platforms">Android, iOS, Web</span>
+            <p>Add transactions with one click</p>
+          </summary>
+          <div>
+            <div>
+              <md-viewer src="./assets/docs/automation/app-links.md" css="markdown-styles.css"/>
+            </div>
+            <h4 id="app-links-troubleshooting" class="section-header"></h4>
+            <div>
+              <md-viewer src="./assets/docs/automation/app-links-troubleshooting.md" css="markdown-styles.css"/>
+            </div>
+            
+          </div>
+          
+        </details>
+
+        <details id="siri-shortcuts">
+          <summary>
+            Siri Shortcuts <span class="support-platforms">iOS</span>
+            <p>Add transactions by using Apple Pay</p>
+          </summary>
+          <div>
+            <md-viewer src="./assets/docs/automation/siri-shortcuts.md" css="markdown-styles.css"/>
+          </div>
+        </details>
+
+        <details id="notification-scan">
+          <summary>
+            Notification Scanning <span class="support-platforms">Android</span>
+            <p>Add a transaction from another app's notification</p>
+          </summary>
+          <div>
+            <md-viewer src="./assets/docs/automation/notification-scan.md" css="markdown-styles.css"/>
+          </div>
+        </details>
+
+        <details id="broadcast-receiver">
+          <summary>
+            Broadcast Receiver <span class="support-platforms">Android</span>
+            <p>Add a transaction while the app is in the background</p>
+          </summary>
+          <div>
+            <md-viewer src="./assets/docs/automation/broadcast-receiver.md" css="markdown-styles.css"/>
+          </div>
+        </details>
+
+        <details id="mailbox">
+          <summary>
+            Mailbox <span class="support-platforms">Android, iOS, Web</span>
+            <p>Import / export transactions to / from an external Google Sheet</p>
+          </summary>
+          <div>
+            <md-viewer src="./assets/docs/automation/mailbox.md" css="markdown-styles.css"/>
+          </div>
+        </details>
+
+        <details id="intelligence">
+          <summary>
+            Intelligence <span class="support-platforms">Android, iOS, Web</span>
+            <p>Add transactions with artificial intelligence</p>
+          </summary>
+          <div>
+            <md-viewer src="./assets/docs/automation/intelligence.md" css="markdown-styles.css"/>
           </div>
         </details>
         
