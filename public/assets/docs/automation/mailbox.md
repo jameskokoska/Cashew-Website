@@ -1,6 +1,6 @@
 
 > [!NOTE]  
-> The `Mailbox` feature must be enabled in `Experimental Features` in the Settings.
+> The `Mailbox` feature must be enabled in `Experimental Features` in the Settings of Cashew.
 
 ## Inbox
 
@@ -18,12 +18,15 @@ Now you can open the Inbox to see the transactions parsed from the external Goog
 
 ## Outbox
 
-Periodically export transactions to a CSV on your Google Drive. The most recent 1000 transactions will be exported. This is useful if you want to periodically parse the transactions added to Cashew without manually exporting the data.
+Automatically export transaction data to a CSV file stored in your Google Drive. On each app launch or when a manual sync is performed with your authenticated Google account, the system exports up to the most recent 1,000 transactions to a CSV file. This is useful if you want to periodically parse transaction data within Cashew without manually exporting the data.
+
+This feature addresses a <a href="https://cashewapp.web.app/faq.html#access-drive-data">limitation of Google Drive's app-specific storage</a> (which Cashew uses to store cloud backups and sync data), which is sandboxed and doesn't allow users to access Cashew backup data. So as an alternative, the outbox feature creates a CSV file to a Cashew folder in the user-visible root of Google Drive, ensuring the exported data can be directly accessed by a user.
 
 To setup the Outbox:
+0) Ensure you are signed in to your Google (Drive) account in Cashew
 1) Enable the `Outbox` feature in the `Mailbox` settings 
     * Allow Cashew to write files to your Google Drive
-2) Restart the app to trigger an outbox creation when the app is launched.
+2) Restart the app to trigger an outbox creation when the app is launched (or perform a manual sync)
 
 <img src="assets/docs/automation/images/mailbox-outbox.png" class="tiny"/>
 

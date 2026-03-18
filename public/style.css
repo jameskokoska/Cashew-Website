@@ -365,28 +365,39 @@ a:hover {
 }
 
 @media only screen and (max-width: 767px) {
-  .chip-section{
+  .chip-section {
     margin-top: -25px;
     margin-bottom: 5px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    align-items: stretch;
   }
-  .chip-section a{
+
+  .chip-section a {
     flex: 1;
+    display: flex;
     text-decoration: none;
   }
-  .chip{
+
+  .chip {
     display: flex;
-    padding: 5px 3px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 6px;
+    width: 100%;
   }
-  .chip:hover{
-    padding: 5px 3px;
-  }
-  .chip-section p{
+
+  .chip-section p {
     text-align: center !important;
     flex: 1;
-    font-size: 13px !important;
+    font-size: 14px !important;
+  }
+
+  .chip:hover{
+    outline: solid var(--black) 3px;
+    background-color: var(--hover-button-bg);
+    padding: 5px 6px;
   }
 }
 
@@ -905,6 +916,7 @@ details .sub-info p{
 
 details .sub-info{
   padding-left: 10px;
+  margin-bottom: 20px;
 }
 
 details ul, ol{
@@ -961,6 +973,20 @@ details .img-wide::-webkit-scrollbar {
   details img{
     margin-left: 2%;
     border-radius: 10px;
+  }
+
+  details .sub-info h4{
+    font-size: 18px;
+    margin-top: 3px;
+  }
+
+  details .sub-info p{
+    font-size: 17px;
+  }
+
+  details .sub-info{
+    padding-left: 5px;
+    margin-bottom: 20px;
   }
 }
 

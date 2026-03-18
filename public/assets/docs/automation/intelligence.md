@@ -1,6 +1,5 @@
-
 > [!NOTE]  
-> The `Intelligence` feature must be enabled in `Experimental Features` in the Settings.
+> The `Intelligence` feature must be enabled in `Experimental Features` in the Settings of Cashew.
 
 Add transactions using natural language using Artificial Intelligence. Cashew Intelligence uses Google Gemini. You can customize what information is sent to Gemini within the Intelligence settings in the Cashew app. Do not use this feature if you wish to not send information to Gemini. An API key is required to use this feature.
 

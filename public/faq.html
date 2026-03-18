@@ -151,9 +151,14 @@
         <details id="future-repetitive-transactions">
           <summary>Future Repetitive Transactions and Automatic Payments</summary>
           <div>
-            <p>The next repetitive transaction in the sequence will only be created when you mark the current transaction (either as <i>Paid</i> or <i>Skipped</i>). </p>
-            <p>By default, overdue transactions (when the current date is past the set transactions date) are automatically paid. You can change this behavior by heading to <em>More</em>, <em>Settings & Customization</em>, <em>More Options</em>, Transactions: <em>Auto Pay Transactions</em>. You can press the <em>action</em> button in the transaction entry to mark it as paid immediately. Then it will create the next transaction in the cycle.</p>
+            <p>To create a repetitive transaction, create a new transaction and select <i>Repetitive</i> or <i>Subscription</i>. To create a future non-repeating transaction, select <i>Upcoming</i>. To view more information about transaction types, tap the ( i ).</p>
+            <img src="./assets/faq/transaction-type-selection.png" class="small"/>
+            <p>These types of transactions are not counted in totals unless marked as <i>Paid</i>. You can mark a transaction by tapping the action on the transaction entry once it has been added to your transactions list.</p>
             <img src="./assets/faq/action-button.png" class="small"/>
+            <h4 id="overdue-transactions">Overdue Transactions</h4>
+            <p>By default, overdue transactions (when the current date is past the set transactions date) are automatically paid. You can change this behavior by heading to <em>More</em>, <em>Settings & Customization</em>, <em>More Options</em>, Transactions: <em>Auto Pay Transactions</em>. You can press the <em>action</em> button in the transaction entry to mark it as paid immediately. Then it will create the next transaction in the cycle.</p>
+            <h4 id="repetitive-behavior">Repetitive Transaction Behavior</h4>
+            <p>The next repetitive transaction in the sequence will only be created when you mark the current transaction (either as <i>Paid</i> or <i>Skipped</i>). </p>
             <p>To create all future transactions, they will need to be marked as paid. By default they are marked as paid to the current date, not when the transaction is due. This can be changed by heading to <em>More</em>, <em>Settings & Customization</em>, <em>More Options</em>, Transactions: <em>Paid Date</em> set to <em>Transaction Date</em>. Now the upcoming repetitive transaction can be marked as paid and it will maintain its original due date, while creating the next in the sequence. These paid transactions will now count towards account and budget totals since it has been marked as paid.</p>
             <h4 id="future-not-created">Future Transaction Not Being Created</h4>
             <p>An upcoming transaction only creates its next future occurrence once. If the created future transaction was deleted, it won't automatically be recreated again. To force the transaction to create a new future transaction, you can change the upcoming transaction type to "Default" and then back to "Upcoming" / "Repetitive" / "Subscription" to ensure it will create the next transaction in the cycle when it is marked as "Paid" / "Skipped".</p>
@@ -682,10 +687,12 @@
             <div class="img-wide"><img src="./assets/faq/sample-excel.png"/></div>
             <h4 id="import-method">Choose Import Method</h4>
             <p>You can import data in two ways:</p>
-            <ul>
-              <li>Using a CSV file locally</li>
-              <li>Providing a link to a shared Google Sheet</li>
-            </ul>
+            <div class="sub-info">
+                <h4 id="import-local-csv">CSV File</h4>
+                <p>Import a local CSV file by selecting <i>Import CSV File</i> in the import section and selecting the file on your device. A popup will prompt you to select the corresponding columns so that data is properly mapped to the corresponding fields of a transaction.</p>
+                <h4 id="import-google-sheet">Google Sheet</h4>
+                <p>Import data from a Google Sheet by pasting the shared URL to that Google Sheet. Ensure that the Google Sheet has sharing permissions as <i>Anyone with the link... "Viewer"</i>, otherwise Cashew cannot read the contents. A popup will prompt you to select the corresponding columns so that data is properly mapped to the corresponding fields of a transaction.</p>
+            </div>
             <p><i>Note: An import cannot be undone. Make sure to keep a backup of your data to revert an import. See: <a target="_blank" href="#backups">Cloud and Local Backups</a></i></p>
             <h4 id="csv-extra-info">Extra Importing Details and CSV Format</h4>
               <div class="sub-info">
@@ -778,7 +785,7 @@
             <p><i>Note: All cloud backups are stored on your Google Account and the Cashew development team does not have access to any of this information - see <a href="./policy.html">Privacy Policy</a>.</i></p>
             
             <h4 id="drive-permissions">Google Drive Permissions</h4>
-            <p>Since cloud backups require Google Drive, you must provide Cashew permission to create and manage its own application data on your Google Drive. If this permission is revoked, you may receive <i>Error 403: Request had insufficient authentication scopes</i>.</p>
+            <p>Since cloud backups require Google Drive, you must provide Cashew permission to create and manage its own application data on your Google Drive. If this permission is revoked, you may receive <i>Error 403: Request had insufficient authentication scopes</i>. To enable permissions, re-login to the Cashew app account page and you will be prompted to enable permissions. Alternatively, see <a href="https://support.google.com/accounts/answer/14012355?hl=en#:~:text=To%20share%20some%20access%20to%20your%20Google%20Account%20data" target="_blank">this guide</a>.</p>
             <p>For cloud backups, Cashew uses an application data folder inside your Google Drive and <b>does not</b> have access to any other files. The application data folder is a special hidden folder that Cashew uses to store application-specific data and backups.</p>
             
             <h4 id="access-drive-data">Accessing Cashew's Google Drive Cloud Data</h4>
@@ -792,6 +799,7 @@
             <p><em>Note: Logging out only disconnects Cashew from Google Drive. Your current app data will <b>not</b> be cleared when you log out.</em></p>
             <p>Because your data remains on the device after logging out, logging in with a different Google account will allow you to continue using your existing Cashew data while storing future cloud backups and sync data under the newly signed-in Google account.</p>
             <p>If you want to remove cloud backup/app data that was stored under the previous Google account, see <a href="#delete-sync-data">Deleting Cashew's Google Drive Cloud Data</a>.</p>
+            <p><i>Note: The Google account logged in for cloud backups is not necessarily the same account associated with your Cashew Pro purchase. See <a href="https://cashewapp.web.app/faq.html#cashew-pro-multiple-devices" target="_blank">how your Cashew Pro license is linked</a>.</i></p>
           </div>
         </details>
 
