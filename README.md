@@ -1,10 +1,10 @@
 <h1 align="center" style="font-size:28px; line-height:1"><b>Cashew Website</b></h1>
 
-<a href="https://cashewapp.web.app/">
-  <div align="center">
+<div align="center">
+  <a href="https://cashewapp.web.app/">
     <img alt="Icon" src="public/assets/icon/icon.png" width="150px">
-  </div>
-</a>
+  </a>
+</div>
 
 ---
 
