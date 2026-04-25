@@ -34,7 +34,7 @@ Now, all Apple Pay transactions matching the selected cards/categories will be a
 
 You can also use the `Add Transaction` action for any other shortcut.
 
-Note that transaction polarity (income/expense) is determined by the set category. If a category is not set, you will be prompted by Cashew when the app is opened, since all transactions require a category.
+Note that if a category is not set, you will be prompted by Cashew when the app is opened, since all transactions require a category.
 
 > [!TIP]
 > Enable `Edit Before Adding` in the `Add Transaction` action to modify or add any transaction details incoming from the executed shortcut before the transaction is added to your transaction list.

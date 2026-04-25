@@ -8,7 +8,11 @@ If you get redirected to the website instead of the Cashew app, your device may 
 
 ### iOS
 
-Links that use shorteners, tracking/redirect URLs, non-HTTPS, or a different subdomain/path than what's supported will typically open in the browser instead of the Cashew app. Some in-app browsers don't fully support App Links (Universal Links), so ensure the link is opened in Safari.
+Sometimes app links may not be opened automatically - you must tap "Open" at the top banner of the webpage that the app link opened (see image below).
+
+<img src="assets/faq/open-cashew-banner-ios.png" class="small"/>
+
+Links that use shorteners, tracking/redirect URLs, non-HTTPS, or a different subdomain/path than what's supported will typically open in the browser instead of the Cashew app. Some in-app browsers don't fully support App Links (Universal Links), so ensure the link is opened in Safari. 
 
 ### Web App
 
