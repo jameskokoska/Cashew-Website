@@ -88,9 +88,10 @@
           <summary>Syncing Troubleshooting</summary>
           <div>
             <p>If you're experiencing syncing issues between devices; consider the following:</p>
+            <p>Ensure you are using the latest version of Cashew on all devices. Syncing has recently been overhauled to improve reliability and speed. Syncing with application version 6.x.x+ is not compatible with older versions (5.x.x and lower). The app version is displayed in the <i>More</i>, <i>About Cashew</i> page.</p>
             <p>Make sure you are logged in to Google Drive with the same account on all devices. Also ensure syncing between devices is enabled. Head to <em>More</em>, <em>Account</em>, login if needed, and tap the <em>Sync/Devices</em> button. Here, <em>Sync Data</em> can be toggled.</p>
             <img src="./assets/faq/sync-data.png" class="small"/>
-            <img src="./assets/faq/sync-data2.png"/>
+            <img src="./assets/faq/sync-data2.png" class="small"/>
             <p>Syncing involves two steps: upload and download. Both steps must occur for changes to reflect across platforms. This allows you to safely sync using your personal Google Drive, eliminating the need for a centralized server and ensuring your data is not shared with us or any third party.</p>
             <p>You can force a sync by:</p>
             <ul>
@@ -99,12 +100,9 @@
             </ul>
             <p>Each device needs to upload changes before they can be downloaded to another device. Therefore, you will need to first sync from one device to upload changes, and then sync on the target to download changes.</p>
             <p><em>Note: auto login is not supported on the web app. This is a <a href="https://pub.dev/packages/google_sign_in_web#differences-between-google-identity-services-sdk-and-google-sign-in-for-web-sdk">limitation imposed by Google</a>. You will need to be sign-in manually each time to ensure syncing is properly executed.</em></p>
-            <h4 id="reset-sync">Reset Syncing</h4>
-            <p>Race conditions can occur and data can becomes out of sync between platforms. Cashew tries its best to ensure it updates data using the latest modified time and propagates changes across platforms. In the case where 2 (or more) devices are out of sync, you can force reset one by restoring a backup and removing all active sync devices. </p>
-            <p>First, create a backup (using the provided cloud backup service or local backups) on the device with the correct data and restore it (via the cloud or using a local backup). Now, open the <i>Sync/Devices</i> page in <i>More</i>, <i>Account</i> and delete all device sync backups. This will ensure that after restoring a backup, a sync will not occur using old out-dated data. On the out-of-sync target device, restore the cloud (or local) backup. This will ensure all data is exactly the same on both devices. </p>
-            <p><i>Note: Restoring a backup will always overwrite all current data on target device. Before overwriting data, it is always recommended to keep an extra backup.</i></p>
             <h4 id="prevent-load-sync-after-backup">Prevent Resyncing When Restoring a Backup</h4>
-            <p>To prevent data from being downloaded and synced right after a backup is restored (cloud or local): open the <i>Sync/Devices</i> page in <i>More</i>, <i>Account</i> and delete all device sync backups. This will ensure that after restoring a backup, data updated from other platforms will not be restored. After this had been completed, the backup can be restored.</p>
+            <p>To prevent data from being downloaded and synced right after a backup is restored (cloud or local): open the <i>Sync/Devices</i> page in <i>More</i>, <i>Account</i> and remove the sync database by using "Reset Sync". This will ensure that after restoring a backup, data from other devices will not be restored. After this has been reset, the backup can be restored without other data being brought in.</p>
+            <p>Alternatively, Cashew now prompts the user if they have syncing enabled and a backup has just been restored. At this point, the user can immediately disable syncing to prevent syncing with remote shared device data.</p>
             <img src="./assets/faq/delete-sync-data.png" class="small"/>
           </div>
         </details>
@@ -165,21 +163,6 @@
           </div>
         </details>
 
-        <details id="transaction-templates">
-          <summary>Transaction Templates</summary>
-          <div>
-            <p>Cashew does not offer transaction templates; however, frequently used transactions can be quickly added using the following methods:</p>
-            <ul>
-              <li>You can quickly make a copy of common transactions. After long pressing the plus button, you will see a list of commonly used transactions, tapping them will duplicate the transaction. If the amount differs, long press on the chip to customize the amount.</li>
-              <img src="./assets/faq/transaction-templates.png"/>
-              <li>Selecting (long pressing) a transaction will also allow you to duplicate the transaction (in the selected transaction top app bar). You can then edit the newly created transaction to your liking. </li>
-              <p><em>Tip: You can create duplicate transactions set to the current date and time by long pressing the duplicate option.</em></p>
-              <p><em>Tip: When editing the details of a transaction, to quickly set the date of a transaction to the current date and time, long press the date and time edit entry.</em></p>
-              <img src="./assets/faq/transaction-templates2.png"/>
-            </ul>
-          </div>
-        </details>
-
         <details id="excluding-transaction-amount">
           <summary>Excluding a Transaction Amount</summary>
           <div>
@@ -237,11 +220,20 @@
         <h3 class="faq-header">Pro Tips</h3>
 
         <details id="customizing-tab-pages">
-          <summary>Customizing Bottom Navigation Bar Pages</summary>
+          <summary>Customizing Navigation Pages</summary>
           <div>
-            <p>To customize the navigation tabs, long press each one to select the page of preference. You cannot change the last tab.</p>
-            <img src="./assets/faq/custom-tab-shortcut.png"/>
-            <p><em>Note: You can only customize tabs while in mobile layout. When in fullscreen/landscape the side navigation menu cannot be customized.</em></p>
+            <h4 id="customize-bottom-tabs">Bottom Tab Navigation</h4>
+            <p>To customize the bottom navigation tabs, long press to bring up the <i>Edit Navigation Tabs</i> menu. Select a tab shortcut to change it to another page. You cannot change the last <i>More</i> tab.</p>
+            <p>The first tab selected will be the default launch page for Cashew. Bottom navigation tabs are displayed when in <i>Mobile Portrait</i> view.</p>
+            <img src="./assets/faq/custom-tab-shortcut.png" class="small"/>
+            <h4 id="customize-more-page">More Page Shortcuts</h4>
+            <p>To customize the <i>More</i> page shortcuts, tap the three-dot menu in the upper-right corner and select "Edit". You can "long-press" drag and drop to rearrange shortcuts or tap each one to toggle enable/disable of that shortcut.</p>
+            <p>The More page is only available when in <i>Mobile Portrait</i> view.</p>
+            <img src="./assets/faq/custom-more-shortcuts.png" class="small"/>
+            <h4 id="customize-side-tabs">Side Tab Navigation</h4>
+            <p>To customize the side navigation tabs, select <i>Edit</i> at the bottom of the list. You can "long-press" drag and drop to rearrange tabs or select each one to toggle enable/disable of that shortcut.</p>
+            <p>Side tab navigation is displayed when in <i>Full Screen Landscape</i> view.</p>
+            <img src="./assets/faq/custom-side-tabs.png" class="tiny"/>
           </div>
         </details>
 
@@ -249,9 +241,7 @@
           <summary>Duplicating a Transaction to the Current Date and Time</summary>
           <div>
             <p>When a transaction is selected you can duplicate the transaction (in the selected transaction top app bar). To duplicate the transactions to the current date and time, you can long press the duplicate option.</p>
-            <img src="./assets/faq/transaction-templates2.png"/>
-            <p>You can also quickly make a copy of common transactions by long pressing the plus button. You will see a list of commonly used transactions, tapping them will duplicate the transaction. If the amount differs, long press on the chip to customize the amount.</p>
-            <img src="./assets/faq/transaction-templates.png"/>
+            <img src="./assets/faq/duplicating-transaction.png"/>
           </div>
         </details>
 
@@ -260,7 +250,7 @@
           <div>
             <p>After long pressing the (+) button in the bottom right corner on most pages, you will be presented with more options to 'Add' things apart from the default transaction.</p>
             <img src="./assets/faq/long-press-plus-button.png" class="small"/>
-            <p>In the popup, you can easily create transfers between accounts or correct an accounts balance under the "Accounts" section. You can quickly duplicate common transactions by tapping the respective transaction chip under "Transactions". There are many other actions that can be performed in this menu.</p>
+            <p>In the popup, you can easily create transfers between accounts or correct an accounts balance under the "Accounts" section. You can also duplicate <a href="#transaction-templates">pinned transactions</a> by tapping the transaction chip under "Transactions".</p>
             <img src="./assets/faq/long-press-plus-button-details.png" class="small"/>
           </div>
         </details>
@@ -466,19 +456,20 @@
 
             <img src="./assets/faq/category-pie.png" class="tiny"/>
 
-            <h4 id="categories-polarity-default">Income and Expense Categories</h4>
+            <h4 id="categories-polarity-default">Expense and Income Categories</h4>
+            <img src="./assets/faq/income-expense-selector.png"/>
             <p>
-              When you create a category, you assign it a default <em>Income</em> or <em>Expense</em>. This default is applied automatically when you select the category while adding a transaction. However, after selecting a category when creating a transaction, it can be switched to any Income/Expense type.
+              When you create a category, you assign it a default <em>Expense</em> or <em>Income</em>. This default is applied automatically when you select the category while adding a transaction. However, after selecting a category when creating a transaction, it can be switched to any Expense/Income type.
             </p>
             <p>For example:</p>
             <ul>
-              <li>You can use a "Work" category for work income and work expenses</li>
               <li>"Bills & Fees" can include both expenses and earned money</li>
+              <li>You can use a "Work" category for work income and work expenses</li>
             </ul>
 
             <h4 id="categories-subcategories">Subcategories & Organization</h4>
             <p>
-              Every category can have subcategories for further categorization. You can create a subcategory for a main category on the Edit Category page.
+              Every category can have subcategories for further categorization. You can create a subcategory for a main category on the Edit Category page. Statistic totals are further segmented and provide more insight when transactions are classified under subcategories.
             </p>
 
             <h4 id="categories-balance-correction">Special Case: Balance Correction</h4>
@@ -719,24 +710,24 @@
               Cashew's Home page is fully customizable. Choose which sections to display (graphs, budgets, balances, heatmaps, pie charts, recent transactions, etc.), and control their order and visibility.
             </p>
             <p>
-              To edit the home page, on the Home page, tap the three-dot menu in the upper-right corner.
+              To edit the home page: on the Home page, tap the three-dot menu in the upper-right corner, and press <em>Edit</em>.
             </p>
             <img src="assets/faq/customize-home-shortcut.png" class="small"/>
             <p><em>Tip: You can hide the home page completely by <a target="_blank" href="#customizing-tab-pages">customizing the bottom navigation bar tab pages</a></em>.</p>
 
             <h4 id="layout-and-visibility">Customizing the Layout &amp; Visibility</h4>
             <p>
-              On the <em>Edit Home</em> page:
+              To edit the home page:
             </p>
             <ul>
-              <li><strong>Reorder:</strong> tap-and-hold a section, drag to a new position, then release.</li>
-              <li><strong>Show/Hide:</strong> toggle the switch for each section.</li>
+              <li>You can "long-press" to drag and drop to rearrange enabled homepage sections.</li>
+              <li>Tap the (+) of a disabled section to enable it. Tap the (-) of an enabled section to hide it.</li>
             </ul>
-            <img src="./assets/faq/net-worth-settings2.png">
+            <img src="./assets/faq/customize-home-page.png">
 
             <h4 id="section-options">Section Options</h4>
             <p>
-              Tap any section on the <em>Edit Home</em> page to configure its settings. Alternatively, long-press a section directly on the Home page to open the same menu.
+              Tap any enabled section on the <em>Edit Home</em> page to configure its settings. Alternatively, long-press a section directly on the Home page itself can open the same menu.
             </p>
 
             <h4 id="select-accounts-for-net-worth">Net Worth / Statistics Account Selection</h4>
@@ -756,6 +747,30 @@
             <p>
               In account list sections on the Home page, the selected account is the <a target="_blank" href="#accounts-primary">Primary Account</a>. You can quickly switch the <strong>Primary Account</strong> by selecting it in the account list. This account is the default for new transactions and defines the app's base currency - see <a target="_blank" href="#accounts-primary">Primary Account</a>.
             </p>
+          </div>
+        </details>
+
+        <details id="transaction-templates">
+          <summary>
+            <div class="summary-with-icon"><img src="./assets/faq/icons/pinboard.svg">Pinned Transactions</div>
+          </summary>
+          <div>
+            <p>Pinned transactions allow you to quickly duplicate an existing transaction to the current date and time. They allow the creation of frequently used entries with just a single tap, saving time on repetitive inputs (For example, transit fares or regular coffee purchases).</p>
+            <h4 id="setup-pinned-transactions">Setup Pinned Transactions</h4>
+            <p>
+              To setup pinned transactions:
+            </p>
+            <ol>
+              <li>Open the <i>Pin Transactions</i> page: long press the (+) button and tap the "Pinned Transactions" icon in the <i>Transactions</i> section</li>
+              <img src="./assets/faq/pinned-transactions-settings.png" class="small"/>
+              <li>Add a new pinned transaction by tapping (+) under the Pinned Transactions list and select the transaction you would like to pin.</li>
+              <li>Observe the transaction is now added to the list.</li>
+              <img src="./assets/faq/pinned-transactions-example.png" class="small"/>
+              <li>Navigate back to the home page and long press the (+) button.</li>
+              <li>Tap the pinned transaction in the <i>Transaction</i> section to quickly duplicate it to the current time.</li>
+              <img src="./assets/faq/pinned-transactions-example-duplicate.png" class="small"/>
+            </ol>
+            <p>You can customize the behavior of duplication for pinned transactions, such as opening the full <i>Edit Transaction</i> page with prefilled transaction details before it is added to Cashew. You can also customize the style of the pinned transactions that will be displayed.</p>
           </div>
         </details>
 
@@ -811,10 +826,9 @@
           <div>
             <p>To delete all data in the app, go to <em>More</em>, <em>About Cashew</em>, and scroll down to find <em>Delete All Data</em>.</p>
             <img src="./assets/faq/delete-all-data.png"/>
-            <p>This process will prompt you to delete sync data if you do not want it to be restored upon login.</p>
-            <p>After logging in again, Cashew will attempt to restore sync backups. If you do not want your synced devices to be restored, you will need to delete them. Navigate to the account page, tap on <em>Sync/Devices</em>, and delete the sync backups.</p>
-            <img src="./assets/faq/sync-data.png" class="small"/>
-            <img src="./assets/faq/delete-sync-data.png" class="small"/>
+            <p>This process will also prompt you to delete sync/backup data that could be stored on the <a href="#cloud-backups">cloud</a>.</p>
+            <p>After logging in again, Cashew will attempt to restore any existing cloud sync data linked to your account. If you do not want your sync data to be restored, you will need to delete it. See <a href="#prevent-load-sync-after-backup">this guide</a> on how to prevent sync data from being restored.
+            </p>
             <h4 id="delete-sync-data">Deleting Cashew's Google Drive Cloud Data</h4>
             <p>Google Drive is used by Cashew to store sync data and cloud backups. This data is stored and connected to your personal Google account - the Cashew development team does not have access to this data, and therefore it will need to be deleted manually by the user. </p>
             <p>To delete all hidden Cashew sync and backup data through Google Drive:</p>

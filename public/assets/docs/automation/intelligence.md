@@ -13,4 +13,4 @@ Once the API key has been verified, you can add transactions from natural langua
 
 <img src="assets/docs/automation/images/intelligence-popup.png" class="small"/>
 
-Alternatively, you can use the App Link feature and use a prompt parameter which will be parsed to create a transaction.
+Alternatively, you can use the <a href="./faq.html#app-links">App Link</a> feature and use a `prompt` parameter which will be parsed to create a transaction.
