@@ -92,6 +92,7 @@
             <p>Make sure you are logged in to Google Drive with the same account on all devices. Also ensure syncing between devices is enabled. Head to <em>More</em>, <em>Account</em>, login if needed, and tap the <em>Sync/Devices</em> button. Here, <em>Sync Data</em> can be toggled.</p>
             <img src="./assets/faq/sync-data.png" class="small"/>
             <img src="./assets/faq/sync-data2.png" class="small"/>
+            <h4 id="sync-process">The Syncing Process</h4>
             <p>Syncing involves two steps: upload and download. Both steps must occur for changes to reflect across platforms. This allows you to safely sync using your personal Google Drive, eliminating the need for a centralized server and ensuring your data is not shared with us or any third party.</p>
             <p>You can force a sync by:</p>
             <ul>
@@ -100,10 +101,12 @@
             </ul>
             <p>Each device needs to upload changes before they can be downloaded to another device. Therefore, you will need to first sync from one device to upload changes, and then sync on the target to download changes.</p>
             <p><em>Note: auto login is not supported on the web app. This is a <a href="https://pub.dev/packages/google_sign_in_web#differences-between-google-identity-services-sdk-and-google-sign-in-for-web-sdk">limitation imposed by Google</a>. You will need to be sign-in manually each time to ensure syncing is properly executed.</em></p>
-            <h4 id="prevent-load-sync-after-backup">Prevent Resyncing When Restoring a Backup</h4>
-            <p>To prevent data from being downloaded and synced right after a backup is restored (cloud or local): open the <i>Sync/Devices</i> page in <i>More</i>, <i>Account</i> and remove the sync database by using "Reset Sync". This will ensure that after restoring a backup, data from other devices will not be restored. After this has been reset, the backup can be restored without other data being brought in.</p>
-            <p>Alternatively, Cashew now prompts the user if they have syncing enabled and a backup has just been restored. At this point, the user can immediately disable syncing to prevent syncing with remote shared device data.</p>
+            <h4 id="reset-sync">Resetting Syncing</h4>
+            <p>To reset syncing you, head to <em>More</em>, <em>Account</em>, login if needed, and tap the <em>Sync/Devices</em> button. Here you can tap <i>Reset Sync</i> to delete the sync database. Note: This will not delete any local data that has already been synced to the current device. After resetting, you can <i>Sync Now</i> to upload the current local data that other devices can sync to.</p>
             <img src="./assets/faq/delete-sync-data.png" class="small"/>
+            <h4 id="prevent-load-sync-after-backup">Prevent Resyncing When Restoring a Backup</h4>
+            <p>To prevent data from being downloaded and synced right after a backup is restored (cloud or local): open the <i>Sync/Devices</i> page in <i>More</i>, <i>Account</i> and remove the sync database by using <i>Reset Sync</i>. This will ensure that after restoring a backup, data from other devices will not be restored. After this has been reset, the backup can be restored without other data being brought in, since there is no longer any cloud sync data to download when the backup is loaded.</p>
+            <p>Alternatively, Cashew now prompts the user if they have syncing enabled and a backup has just been restored. At this point, the user can immediately disable syncing to prevent syncing with remote shared device data.</p>
           </div>
         </details>
 
@@ -111,12 +114,20 @@
           <summary>Tracking Credit Card Spending</summary>
           <div>
             <h4 id="track-credit-intro">Tracking Credit Spending</h4>
-            <p>Create a separate account specifically for tracking credit card spending. Every time you make a purchase using that credit card, you would add a transaction to that account. You can <a target="_blank" href="#transferring-between-accounts">transfer</a> amounts between accounts to add credit card payments or apply a <a target="_blank" href="#balance-corrections">Balance Correction</a>.</p>
+            <p>Create a separate account specifically for tracking credit card spending. Every time you make a purchase using that credit card, you would add a transaction to that account. You can <a target="_blank" href="#transferring-between-accounts">transfer</a> amounts between accounts for credit card payments or apply a <a target="_blank" href="#balance-corrections">Balance Correction</a>.</p>
             <img src="./assets/faq/create-balance-correction-transfer-balance.png"/>            
             
             <h4 id="credit-card-statement">Credit Card Statement</h4>
             <p>In the "Account Details" page (tapping the account twice on the homepage account switcher sections), set the cycle time range for reports to reflect the spending from your credit card statement.</p>
-            <p>Utilize the "All Spending Summary" page to view past spending ranges associated with your credit card account. You can apply filters to only select that account.</p>
+            <p>Utilize the <i>All Spending Summary</i> page to view past spending ranges associated with your credit card account. You can apply filters to only select that account.</p>
+
+            <h4 id="credit-card-budget">Credit Card Payments</h4>
+            <p>
+              You can <a target="_blank" href="#transferring-between-accounts">transfer</a> amounts between accounts for credit card payments or apply a <a target="_blank" href="#balance-corrections">Balance Correction</a>. To support reminders, consider a <a href="#repetitive-transfers">repetitive transfer</a> or set an upcoming transaction. When the transaction due date approaches, Cashew will send you a notification. 
+            </p>
+            <p>
+              Since the amount of the payment may be unknown, you can set <em>More</em>, <em>Settings & Customization</em>, <em>Transactions</em>, Scheduled Transactions: <em>Confirm Amount</em> to "If transaction amount is 0". If you then create an upcoming repetitive transaction called "Credit Payment" and explicitly set the amount to 0 - you will be prompted to enter an amount when manually setting this transaction to "Paid". You can also <a href="#overdue-transactions">disable automatic payments</a> for overdue transactions, so you must manually mark it as "Paid" and enter a custom amount.
+            </p>
             
             <h4 id="credit-card-budget">Credit Card Budget</h4>
             <p>Create a new budget with a set limit, and set the account to the respective credit card account. You can set the start date to the date of your statement so that the totals within the budget history will match that of your statement. Pay attention to the set period dates - this will repeat automatically for the set time range.</p>
@@ -154,10 +165,10 @@
             <p>These types of transactions are not counted in totals unless marked as <i>Paid</i>. You can mark a transaction by tapping the action on the transaction entry once it has been added to your transactions list.</p>
             <img src="./assets/faq/action-button.png" class="small"/>
             <h4 id="overdue-transactions">Overdue Transactions</h4>
-            <p>By default, overdue transactions (when the current date is past the set transactions date) are automatically paid. You can change this behavior by heading to <em>More</em>, <em>Settings & Customization</em>, <em>More Options</em>, Transactions: <em>Auto Pay Transactions</em>. You can press the <em>action</em> button in the transaction entry to mark it as paid immediately. Then it will create the next transaction in the cycle.</p>
+            <p>By default, overdue transactions (when the current date is past the set transactions date) are automatically paid. You can change this behavior by heading to <em>More</em>, <em>Settings & Customization</em>, <em>Transactions</em>, Scheduled Transactions: <em>Automatically Pay Transactions</em>. You can press the <em>action</em> button in the transaction entry to mark it as paid immediately. Then it will create the next transaction in the cycle.</p>
             <h4 id="repetitive-behavior">Repetitive Transaction Behavior</h4>
             <p>The next repetitive transaction in the sequence will only be created when you mark the current transaction (either as <i>Paid</i> or <i>Skipped</i>). </p>
-            <p>To create all future transactions, they will need to be marked as paid. By default they are marked as paid to the current date, not when the transaction is due. This can be changed by heading to <em>More</em>, <em>Settings & Customization</em>, <em>More Options</em>, Transactions: <em>Paid Date</em> set to <em>Transaction Date</em>. Now the upcoming repetitive transaction can be marked as paid and it will maintain its original due date, while creating the next in the sequence. These paid transactions will now count towards account and budget totals since it has been marked as paid.</p>
+            <p>To create all future transactions, they will need to be marked as paid. By default they are marked as paid to the current date, not when the transaction is due. This can be changed by heading to <em>More</em>, <em>Settings & Customization</em>, <em>Transactions</em>, Scheduled Transactions: <em>Paid Date</em> set to <em>Transaction Date</em>. Now the upcoming repetitive transaction can be marked as paid and it will maintain its original due date, while creating the next in the sequence. These paid transactions will now count towards account and budget totals since it has been marked as paid.</p>
             <h4 id="future-not-created">Future Transaction Not Being Created</h4>
             <p>An upcoming transaction only creates its next future occurrence once. If the created future transaction was deleted, it won't automatically be recreated again. To force the transaction to create a new future transaction, you can change the upcoming transaction type to "Default" and then back to "Upcoming" / "Repetitive" / "Subscription" to ensure it will create the next transaction in the cycle when it is marked as "Paid" / "Skipped".</p>
           </div>
@@ -175,6 +186,7 @@
           <summary>Add to a Budget, Goal, or Long-Term Loan Without Affecting Account Balance</summary>
           <div>
             <p>To add to a budget, goal, or long-term loan without impacting your account balance, create a separate account dedicated to tracking your budget, goal, or long-term loan contribution transactions. Transactions added to this account will not affect other account balances. Once you create a transaction added to this extra account, you can organize it into your budget, goal or long-term loan of your choice.</p>
+            <p>You can <a href="#select-accounts-for-net-worth">customize the net worth</a> to only include certain accounts and use account filters when analyzing spending statistics to exclude this separate "external" account.</p>
           </div>
         </details>
 
@@ -669,7 +681,7 @@
             <div class="summary-with-icon"><img src="./assets/faq/icons/import-csv.svg">Importing CSV / Excel / External Data</div>
           </summary>
           <div>
-            <p>You can import a CSV (Excel) file list of transactions into Cashew. You can import data in Cashew by heading to <em>More</em>, <em>Settings & Customization</em>, and scrolling down to "Import & Export". </p>  
+            <p>You can import a CSV (Excel) file list of transactions into Cashew. You can import data in Cashew by heading to <em>More</em>, <em>Settings & Customization</em>, <i>Import & Export Data</i>. </p>  
             <p>To import external data into Cashew from other applications you will need to be able to extract data that can be manipulated into a CSV file Cashew understands. To do this use the provided import templates:</p>
             <h4 id="csv-template">Utilize Provided Templates</h4>
             <p>Use the provided CSV templates within the app for importing data. You may need to copy your data using Sheets or Excel into the template from an existing CSV file to the respective columns (especially if migrating from another application) to ensure the template format is used. This ensures a unified format that Cashew can understand. <i>Extra information below is provided on specific formatting of certain types of data.</i></p>
@@ -780,7 +792,7 @@
             <div class="summary-with-icon"><img src="./assets/faq/icons/cloud-backup.svg">Cloud and Local Backups</div>
           </summary>
           <div>
-            <p>Cashew offers 2 methods of backups: Google Drive Cloud Backups and Local Data File Backups. To create/import backups head to <em>More</em>, <em>Settings & Customization</em>, under the 'Backups' section. </p>
+            <p>Cashew offers 2 methods of backups: Google Drive Cloud Backups and Local Data File Backups. To create/import backups head to <em>More</em>, <em>Settings & Customization</em>, <i>Import & Export Data</i>. </p>
             <p>A Cashew backup file is a direct copy of the current app's database. It captures all data at that point in time, containing all budget data, transaction data, application settings etc. The database can be opened with an external SQL viewer tool. Please be advised if the backup file is tampered with, it may not be able to be successfully imported back into Cashew.</p>
             <p><i>Note: Keeping periodic backups keeps your data safe in the case of a corrupted file, accidental deletion, or if you need to restore your information on a new device.</i></p>
             <p><i>Note: Restoring a backup will always overwrite all current data on target device. Before overwriting data, it is always recommended to keep an extra backup.</i></p>
@@ -788,8 +800,8 @@
             <p><em>Note: Exporting and Importing CSV files as backups is NOT recommended. Cashew does not export all app data nor does it import all app data when using CSV Importing and Exporting. For example, app settings are not exported to the CSV.</em></p>
             
             <h4 id="local-backups">Local Backups</h4>
-            <p>To create a local backup, head to <em>More</em>, <em>Settings & Customization</em>, under the 'Backups' section, tap <em>Export Cashew Data File</em> and choose a location to save the backup file. Backups can be restored at any time.</p>
-            <p>To restore a local backup, head to <em>More</em>, <em>Settings & Customization</em>, under the 'Backups' section, tap <em>Import Cashew Data File</em> and choose the backup file.</p>
+            <p>To create a local backup, head to <em>More</em>, <em>Settings & Customization</em>, <i>Import & Export Data</i>, under the 'Backups' section, tap <em>Export Cashew Data File</em> and choose a location to save the backup file. Backups can be restored at any time.</p>
+            <p>To restore a local backup, head to <em>More</em>, <em>Settings & Customization</em>, <i>Import & Export Data</i>, under the 'Backups' section, tap <em>Import Cashew Data File</em> and choose the backup file.</p>
             
             <h4 id="cloud-backups">Cloud Backups</h4>
             <p>Cloud backups can be enabled by linking a Google Drive Account to Cashew. To login, go to <em>More</em> and tap <em>Login/Google Drive</em>. Once logged in, you can create a cloud backup, restore a cloud backup, manage device sync data, and manage cloud backup files. Cloud backups can also be downloaded and saved to the device as a local backup to be restored at any time.</p> 
@@ -798,6 +810,10 @@
             <p>Automatic cloud backups are enabled by default and will create periodic backups on login. You must be logged in for Cashew to create these automatic backups.</p>
             <img src="./assets/faq/auto-backups.png" class="small"/>
             <p><i>Note: All cloud backups are stored on your Google Account and the Cashew development team does not have access to any of this information - see <a href="./policy.html">Privacy Policy</a>.</i></p>
+
+            <h4 id="cloud-backups">Cloud Syncing</h4>
+            <p>Your personal Google Drive is used to support syncing data between multiple devices. Each device needs to upload changes before they can be downloaded to another device. Therefore, you will need to first sync from one device to upload changes, and then sync on the target to download changes. This eliminates the need for a centralized server and ensures your data is not shared with us or any third party.</p>
+            <p>See <a href="#troubleshooting-syncing">Syncing Troubleshooting</a> for more information.</p>
             
             <h4 id="drive-permissions">Google Drive Permissions</h4>
             <p>Since cloud backups require Google Drive, you must provide Cashew permission to create and manage its own application data on your Google Drive. If this permission is revoked, you may receive <i>Error 403: Request had insufficient authentication scopes</i>. To enable permissions, re-login to the Cashew app account page and you will be prompted to enable permissions. Alternatively, see <a href="https://support.google.com/accounts/answer/14012355?hl=en#:~:text=To%20share%20some%20access%20to%20your%20Google%20Account%20data" target="_blank">this guide</a>.</p>
@@ -814,7 +830,7 @@
             <p><em>Note: Logging out only disconnects Cashew from Google Drive. Your current app data will <b>not</b> be cleared when you log out.</em></p>
             <p>Because your data remains on the device after logging out, logging in with a different Google account will allow you to continue using your existing Cashew data while storing future cloud backups and sync data under the newly signed-in Google account.</p>
             <p>If you want to remove cloud backup/app data that was stored under the previous Google account, see <a href="#delete-sync-data">Deleting Cashew's Google Drive Cloud Data</a>.</p>
-            <p><i>Note: The Google account logged in for cloud backups is not necessarily the same account associated with your Cashew Pro purchase. See <a href="https://cashewapp.web.app/faq.html#cashew-pro-multiple-devices" target="_blank">how your Cashew Pro license is linked</a>.</i></p>
+            <p><i>Note: The Google account logged in for cloud backups is not necessarily the same account associated with your Cashew Pro purchase. See <a href="https://cashewapp.web.app/faq.html#cashew-pro-multiple-devices" target="_blank">how your Cashew Pro license is handled</a>.</i></p>
           </div>
         </details>
 
