@@ -7,10 +7,6 @@
         ],
         "components": [
           {
-            "/": "/addTransfer",
-            "comment": "Add a transfer between accounts with data"
-          },
-          {
             "/": "/addTransferRoute",
             "comment": "Start the transfer route with prefilled data"
           },
@@ -45,6 +41,10 @@
           {
             "/": "/addTransferPage",
             "comment": "Open the Transfer Balance Page"
+          },
+          {
+            "/": "/addBudgetPage",
+            "comment": "Open the Add Budget Page"
           },
           {
             "/": "/searchTransactionsPage",

@@ -6,6 +6,14 @@ Send any valid <a href="./faq.html#app-links">App Link</a> data to the receiver 
 
 To use this feature with [Automate (free)](https://play.google.com/store/apps/details?id=com.llamalab.automate), see the example guide below:
 
+1) Download the example `.flo` from <a href="https://drive.google.com/file/d/1cuBvSOtQl7PSecZXcrZkgIW49t_bgaI8/view?usp=sharing">here</a>, and import it into [Automate](https://play.google.com/store/apps/details?id=com.llamalab.automate) 
+    * Open Automate > three dot menu in the top right corner > Import
+2) Run the imported automation
+3) Open Cashew and see the sent data get processed by Cashew
+4) Edit the automation `Send broadcast` block with any custom data as input into the `Data URI` field containing the Cashew app link
+
+or to setup the automation manually:
+
 1) Create a new Flow
 2) Add a new action by pressing (+), and attach a `Broadcast send` block to the `Flow beginning` block
     * <img src="assets/docs/automation/images/automate-1.png" class="tiny"/>
