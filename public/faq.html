@@ -89,7 +89,7 @@
           <div>
             <p>If you're experiencing syncing issues between devices; consider the following:</p>
             <p>Ensure you are using the latest version of Cashew on all devices. Syncing has recently been overhauled to improve reliability and speed. Syncing with application version 6.x.x+ is not compatible with older versions (5.x.x and lower). The app version is displayed in the <i>More</i>, <i>About Cashew</i> page.</p>
-            <p>Make sure you are logged in to Google Drive with the same account on all devices. Also ensure syncing between devices is enabled. Head to <em>More</em>, <em>Account</em>, login if needed, and tap the <em>Sync/Devices</em> button. Here, <em>Sync Data</em> can be toggled.</p>
+            <p>Make sure you are logged in to Google Drive with the same account on all devices. Also ensure syncing between devices is enabled. Head to <em>More</em>, <em>Login / Backup</em>, login if needed, and tap the <em>Sync/Devices</em> button. Here, <em>Sync Data</em> can be toggled.</p>
             <img src="./assets/faq/sync-data.png" class="small"/>
             <img src="./assets/faq/sync-data2.png" class="small"/>
             <h4 id="sync-process">The Syncing Process</h4>
@@ -102,7 +102,7 @@
             <p>Each device needs to upload changes before they can be downloaded to another device. Therefore, you will need to first sync from one device to upload changes, and then sync on the target to download changes.</p>
             <p><em>Note: auto login is not supported on the web app. This is a <a href="https://pub.dev/packages/google_sign_in_web#differences-between-google-identity-services-sdk-and-google-sign-in-for-web-sdk">limitation imposed by Google</a>. You will need to be sign-in manually each time to ensure syncing is properly executed.</em></p>
             <h4 id="reset-sync">Resetting Syncing</h4>
-            <p>To reset syncing you, head to <em>More</em>, <em>Account</em>, login if needed, and tap the <em>Sync/Devices</em> button. Here you can tap <i>Reset Sync</i> to delete the sync database. Note: This will not delete any local data that has already been synced to the current device. After resetting, you can <i>Sync Now</i> to upload the current local data that other devices can sync to.</p>
+            <p>To reset syncing you, head to <em>More</em>, <em>Login / Backup</em>, login if needed, and tap the <em>Sync/Devices</em> button. Here you can tap <i>Reset Sync</i> to delete the sync database. Note: This will not delete any local data that has already been synced to the current device. After resetting, you can <i>Sync Now</i> to upload the current local data that other devices can sync to.</p>
             <img src="./assets/faq/delete-sync-data.png" class="small"/>
             <h4 id="prevent-load-sync-after-backup">Prevent Resyncing When Restoring a Backup</h4>
             <p>To prevent data from being downloaded and synced right after a backup is restored (cloud or local): open the <i>Sync/Devices</i> page in <i>More</i>, <i>Account</i> and remove the sync database by using <i>Reset Sync</i>. This will ensure that after restoring a backup, data from other devices will not be restored. After this has been reset, the backup can be restored without other data being brought in, since there is no longer any cloud sync data to download when the backup is loaded.</p>
@@ -195,13 +195,14 @@
         </details>
 
         <details id="archiving">
-          <summary>Archiving Budgets, Goals, and Long-Term Loans</summary>
+          <summary>Archiving Accounts, Budgets, Goals, and Long-Term Loans</summary>
           <div>
-            <p>To archive a budget, goal, or long-term loan you need to visit the edit data page for each. To visit the edit data page head to <em>More</em>, <em>Budgets/Goals/Loans</em> and tapping the 'Pencil' icon in the top right if needed. To archive a budget/goal/long-term loan you can toggle the 'eye' icon. This will make the archived item 'hidden': always listed at the end of lists during selections and faded out.</p>
-            <p>To remove a pinned budget, goal, or long-term loan on the homepage, you will need to edit the home page section separately.</p>
+            <p>To archive an account, category, budget, goal, or long-term loan you need to visit the edit data page for each. To visit the edit data page head to <em>More</em>, <em>"Edit, Delete, and Reorder Data"</em>, <em>Accounts/Categories/Budgets/Goals/Loans</em> and tapping the 'Pencil' icon in the top right if needed. To archive, you can toggle the 'eye' icon. This will make the archived item 'hidden' in the UI.</p>
+            <p>Note: To remove a pinned account, budget, goal, or long-term loan on the homepage, you will need to edit the home page section separately.</p>
+            <img src="./assets/faq/edit-accounts.png" class="small"/>
             <img src="./assets/faq/edit-budgets.png" class="small"/>
             <img src="./assets/faq/edit-goals.png" class="small"/>
-            <img src="./assets/faq/edit-long-term-loanspng.png" class="small"/>
+            <img src="./assets/faq/edit-long-term-loans.png" class="small"/>
           </div>
         </details>
 
@@ -370,7 +371,7 @@
             <h4 id="bg-accounts">Step 1: Accounts</h4>
             <ul>
               <li>A default account is created for you when you first open Cashew.</li>
-              <li>Go to the <em>More</em> tab page, and Edit <em>Accounts</em> to manage them.</li>
+              <li>Go to the <em>More</em> tab page, <em>"Edit, Delete, and Reorder Data"</em>, and <em>Accounts</em> to manage them.</li>
               <li>Tap an account to edit it (name, currency, color), or tap <strong>(+)</strong> to create a new one (Bank, Cash, <a href="#track-credit-spending">Credit Card</a>, etc.)</li>
               <li>Set your main account as the <a ref="#accounts-primary">Primary Account</a> (the starred one). This is the default when adding transactions, and sets the app's main currency for totals. </li>
             </ul>
@@ -384,7 +385,7 @@
             <h4 id="bg-budget">Step 2: A Simple Budget</h4>
             <ul>
               <li>A default budget may already exist if you entered an initial budget amount during setup.</li>
-              <li>Go to the <em>More</em> tab page, and Edit <em>Budgets</em> to manage them.</li>
+              <li>Go to the <em>More</em> tab page, <em>"Edit, Delete, and Reorder Data"</em>, and <em>Budgets</em> to manage them.</li>
               <li>Tap a budget to edit it (name, amount, color, time period), or tap <strong>(+)</strong> to create a new one.</li>
               <li>Want more details? See the <a href="#budgets">full budgets guide</a>.</li>
             </ul>
@@ -454,7 +455,7 @@
               Each account has one currency. Cashew converts all account balances and totals to the Primary Account's currency for summaries and reports. Cashew offers a convenient way to convert other currencies amounts to the Primary Account's currency - see <a target="_blank" href="#multiple-currencies">Using Multiple Currencies</a>.
             </p>
             <p>
-              When entering an amount, you can tap the currency conversion button to convert from the selected account into the primary currency in one step. You can also set custom rates in <em>More</em>, <em>Accounts</em>, <em>Exchange Rates</em> - see <a target="_blank" href="#custom-currencies">Custom Currencies</a>.
+              When entering an amount, you can tap the currency conversion button to convert from the selected account into the primary currency in one step. You can also set custom rates in <em>More</em>, <em>"Edit, Delete, and Reorder Data"</em>, <em>Accounts</em>, <em>Exchange Rates</em> - see <a target="_blank" href="#custom-currencies">Custom Currencies</a>.
             </p>
 
             <h4 id="decimal-precision">Decimal Precision</h4>
@@ -486,7 +487,7 @@
 
             <h4 id="accounts-manage">Creating, Editing, Archiving, and Managing Accounts</h4>
             <p>
-              To create and edit accounts, go to <em>More</em>, <em>Accounts</em>. Here you can set the Primary Account. Each account has a color, currency, and decimal precision. You can <em>Merge Accounts</em> together in the Edit Account page - which transfers the transactions of one account into another.
+              To create and edit accounts, go to <em>More</em>, <em>"Edit, Delete, and Reorder Data"</em>, <em>Accounts</em>. Here, you can create, change the order, and edit or archive an existing item. When they are completed or no longer needed, they can be "archived" - see <a target="_blank" href="#archiving">archiving</a>.
             </p>
             <img src="./assets/faq/edit-accounts.png" class="small"/>
           </div>
@@ -530,8 +531,9 @@
 
             <h4 id="categories-manage">Creating, Editing, Archiving, and Managing Categories</h4>
             <p>
-              To create and edit categories, go to <em>More</em>, <em>Categories</em>. Here, you can create new categories, change the order or edit a specific category. You can <em>Merge Categories</em> together in the Edit Category page - which transfers the transactions of one category into another. You can create a subcategory for a main category on the Edit Category page. You can also convert an existing main category into a subcategory from the Edit Category page. 
+              To create and edit categories, go to <em>More</em>, <em>"Edit, Delete, and Reorder Data"</em>, <em>Categories</em>. Here, you can create, change the order, and edit or archive an existing item. When they are completed or no longer needed, they can be "archived" - see <a target="_blank" href="#archiving">archiving</a>.
             </p>
+            <img src="./assets/faq/edit-categories.png" class="small"/>
           </div>
         </details>
 
@@ -545,9 +547,9 @@
             <img src="./assets/faq/budget-container.png" class="small"/>
             <p>Cashew is a budget tracking application after all, so let's take a deep dive into learning how to create and manage a budget within Cashew in detail.</p>
             <h4 id="budget-create-intro">Creating a Budget</h4>
-            <p>To create a budget, first open the <em>Budgets</em> page. Head to <em>More</em>, <em>Budgets</em>, and tap the (+) button.</p>
+            <p>To create a budget, first open the <em>Budgets</em> page. Head to <em>More</em>, <em>"Edit, Delete, and Reorder Data"</em>, <em>Budgets</em>, and tap the (+) button.</p>
             <img src="./assets/faq/add-budget.png" class="small"/>
-            <img src="./assets/faq/add-budget2.png" class="small"/>
+            <img src="./assets/faq/edit-budgets.png" class="small"/>
             <h4 id="budget-types">Budget Types</h4>
             <p>There are two types of budgets in Cashew: <em>Added Only</em> budget and an <em>All Transactions</em> budget. This cannot be changed after the budget is created. However, you can create multiple budgets within Cashew.</p>
             <p><strong>Added Only Budget:</strong></p>
@@ -598,8 +600,9 @@
 
             <h4 id="budget-manage">Creating, Editing, Archiving, and Managing Budgets</h4>
             <p>
-              To create and edit budgets, go to <em>More</em>, <em>Budgets</em>. Here, you can create new budgets, change the order, edit a specific budget or archive a budget. When budgets are completed or no longer needed, they can be "archived" - see <a target="_blank" href="#archiving">archiving</a>.
+              To create and edit budgets, go to <em>More</em>, <em>"Edit, Delete, and Reorder Data"</em>, <em>Budgets</em>. Here, you can create, change the order, and edit or archive an existing item. When they are completed or no longer needed, they can be "archived" - see <a target="_blank" href="#archiving">archiving</a>.
             </p>
+            <img src="./assets/faq/edit-budgets.png" class="small"/>
           </div>
         </details>
 
@@ -643,7 +646,7 @@
 
             <h4 id="goals-manage">Creating, Editing, Archiving, and Managing Goals</h4>
             <p>
-              To create and edit goals, go to <em>More</em>, <em>Goals</em>. Here, you can create new goals, change the order, edit a specific goals or archive a goals. When goals are completed or no longer needed, they can be "archived" - see <a target="_blank" href="#archiving">archiving</a>.
+              To create and edit goals, go to <em>More</em>, <em>"Edit, Delete, and Reorder Data"</em>, <em>Goals</em>. Here, you can create, change the order, and edit or archive an existing item. When they are completed or no longer needed, they can be "archived" - see <a target="_blank" href="#archiving">archiving</a>.
             </p>
             <img src="./assets/faq/edit-goals.png" class="small"/>
           </div>
@@ -654,7 +657,7 @@
             <div class="summary-with-icon"><img src="./assets/faq/icons/loans.svg">Loans</div>
           </summary>
           <div>
-            <p>Loans help you track when money is lent or borrowed and therefore track owed money. There are 2 types of loans in Cashew. One-time loans and long-term loans. Loans can be managed on the <em>More</em>, <em>Loans</em> page within Cashew.</p>
+            <p>Loans help you track when money is lent or borrowed and therefore track owed money. There are 2 types of loans in Cashew. One-time loans and long-term loans. Loans can be managed on the <em>More</em>, <em>"Edit, Delete, and Reorder Data"</em>, <em>Loans</em> page within Cashew.</p>
           
             <h4 id="ot-loans">One-Time Loans</h4>
             <p>One-time loans are set by changing the transaction type. These loan transactions can only be collected to the same account. A "lent" transaction is a negative cash flow until marked as "collected". This emulates receiving money (positive) until marked as collected, resulting in a net 0. A "borrowed" transaction is positive cash flow until marked as "settled". This emulates giving out money (negative) until marked as settled/received, resulting in a net 0. </p>
@@ -675,6 +678,12 @@
             <p>Say in this example, the long-term loan amount total needs to be increased to 60$ from 50$. Manually add a new "Paid" transaction to this long-term loan of amount 10$ and the total left to collect will increase by 10$. This results in the long-term loan totalling 60$.</p></p>
 
             <p>If the type of long-term loan is switched to "Borrowed" instead of lent, the opposite polarity of transactions will be used to calculate the total. </p>
+
+            <h4 id="lt-loans-manage">Creating, Editing, Archiving, and Managing Long-Term Loans</h4>
+            <p>
+              To create and edit long-term loans, go to <em>More</em>, <em>"Edit, Delete, and Reorder Data"</em>, <em>Loans</em>. Here, you can create, change the order, and edit or archive an existing item. When they are completed or no longer needed, they can be "archived" - see <a target="_blank" href="#archiving">archiving</a>.
+            </p>
+            <img src="./assets/faq/edit-long-term-loans.png" class="small"/>
 
             <p><em>Tip: In a long-term loan, you can also change the "Total Offset". The total offset will not count as a transaction, but will add to the total of the loan by some offset set. This is useful if you need to modify the total of the loan without adding a transaction affecting the net totals, for example to increase the loan amount due to interest or other unaccounted for costs modifying the total owed/lent out.</em></p>
             <img src="./assets/faq/long-term-loan-total-offset-example.png" class="small"/>
@@ -702,7 +711,7 @@
           </summary>
           <div>
             <p>Cashew only supports one currency per account. You can change the currency by editing an account.</p>
-            <p>To change the primary account's currency by heading to <em>More</em>, <em>Accounts</em>; the starred account represents the primary account and selected currency of the application. Cashew will convert all currencies to this account.</p>
+            <p>To change the primary account's currency by heading to <em>More</em>, <em>"Edit, Delete, and Reorder Data"</em>, <em>Accounts</em>; the starred account represents the primary account and selected currency of the application. Cashew will convert all currencies to this account.</p>
             <img src="./assets/faq/account-currency-picker.png" class="small"/>
             <p>However, if you need to enter a different currency with automatic conversion into another account, you can use the currency conversion button when entering an amount.</p>
             <p>Make sure the primary account is selected to the currency you want to convert to. Then, select another account when entering an amount, and convert the amount back to the primary account with one tap.</p>
@@ -710,7 +719,7 @@
             <img src="./assets/faq/convert-currency.png" class="small"/>
             <p>Using the currency conversion button will allow you to store the converted currency using the conversion rate at the current point in time, and to the target account's currency rate. Therefore if the currency rate changes, the converted amount will not since it has already been converted and stored in the transaction at that point in time.</p>
             <h4 id="custom-currencies">Custom Currencies</h4>
-            <p>You can customize the currency conversion rates by heading to <em>More</em>, <em>Accounts</em>, <em>Exchange Rates</em>. If a custom currency is not set, exchange rates are used and updated daily from <a href="https://github.com/fawazahmed0/exchange-api">https://github.com/fawazahmed0/exchange-api</a>.</p>
+            <p>You can customize the currency conversion rates by heading to <em>More</em>, <em>"Edit, Delete, and Reorder Data"</em>, <em>Accounts</em>, <em>Exchange Rates</em>. If a custom currency is not set, exchange rates are used and updated daily from <a href="https://github.com/fawazahmed0/exchange-api">https://github.com/fawazahmed0/exchange-api</a>.</p>
             <img src="./assets/faq/edit-accounts.png" class="small"/>
           </div>
         </details>
@@ -939,11 +948,29 @@
 
         <details id="notification-scan">
           <summary>
-            Notification Scanning <span class="support-platforms">Android</span>
-            <p>Add a transaction from another app's notification</p>
+            Notification (and SMS) Scanning <span class="support-platforms">Android, iOS</span>
+            <p>Add a transaction from another app's notification / SMS message</p>
           </summary>
           <div>
-            <md-viewer src="./assets/docs/automation/notification-scan.md" css="markdown-styles.css"/>
+            <div class="tab-switcher">
+              <input type="radio" name="tabs-notif-scanning" id="tab1-notif-scanning">
+              <input type="radio" name="tabs-notif-scanning" id="tab2-notif-scanning">
+
+              <div class="tabs">
+                <label for="tab1-notif-scanning">Android</label>
+                <label for="tab2-notif-scanning">iOS</label>
+              </div>
+
+              <div class="contents">
+                <div id="content1-notif-scanning" class="content">
+                  <md-viewer src="./assets/docs/automation/notification-scan.md" css="markdown-styles.css"/>
+                </div>
+
+                <div id="content2-notif-scanning" class="content">
+                  <md-viewer src="./assets/docs/automation/message-scan.md" css="markdown-styles.css"/>
+                </div>
+              </div>
+            </div>
           </div>
         </details>
 
@@ -973,7 +1000,24 @@
             <p>Add transactions with artificial intelligence</p>
           </summary>
           <div>
-            <md-viewer src="./assets/docs/automation/intelligence.md" css="markdown-styles.css"/>
+            <div class="tab-switcher">
+              <input type="radio" name="tabs-intelligence" id="tab1-intelligence">
+              <input type="radio" name="tabs-intelligence" id="tab2-intelligence">
+
+              <div class="tabs">
+                <label for="tab1-intelligence">Gemini</label>
+                <label for="tab2-intelligence">Apple Intelligence</label>
+              </div>
+
+              <div class="contents">
+                <div id="content1-intelligence" class="content">
+                  <md-viewer src="./assets/docs/automation/intelligence-gemini.md" css="markdown-styles.css"/>
+                </div>
+                <div id="content2-intelligence" class="content">
+                  <md-viewer src="./assets/docs/automation/intelligence-apple.md" css="markdown-styles.css"/>
+                </div>
+              </div>
+            </div>
           </div>
         </details>
         

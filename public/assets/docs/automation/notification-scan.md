@@ -1,4 +1,4 @@
-> [!NOTE]  
+> [!NOTE]
 > The `Notification Scanning` feature must be enabled in `Experimental Features` in the Settings of Cashew.
 
 This feature allows you to automatically create transactions from received external device notifications. Most notifications from other apps (such as banking apps) all follow a similar format, with only certain pieces of information changing per posted transaction. You need to setup a configuration so Cashew understands how to parse the format for information such as the title or amount of a posted transaction. All notification data is processed on device and is an optional service.

@@ -138,20 +138,18 @@ The JSON must be encoded in the URL as JSON uses invalid URI characters. Once en
 | `title` / `name`        | The title of the balance correction transaction.                                                                                                                                                                    | No       | Empty string    |
 | `date` / `dateCreated`  | The date of the transaction. Supported string formats can be found in the `getCommonDateFormats()` method [here](https://github.com/jameskokoska/Cashew/blob/5.2.3%2B328/budget/lib/struct/commonDateFormats.dart). | No       | Current date    |
 
-<!-- ## Add Transaction by Parsing a Notification Message
+## Add Transaction by Parsing a Notification Message
 
-The `Notification Parsing` feature must be enabled in `Experimental Features` in the Settings.
+The `Notification/Message Parsing` feature must be enabled in `Experimental Features` in the Settings.
 
-| Endpoint                                        | Description                                                                                                                 |
-| ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `/addTransaction/notificationMessage`           | Add a new transaction by attempting to parse a notification message with a `Notification Scanner Template`.                  |
-| `/addTransactionRoute/notificationMessage`      | Open the add new transaction route by attempting to parse a notification message with a `Notification Scanner Template`.     |
+| Endpoint                                             | Description                                                                                                                                                             |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/addTransaction/parseMessageForTransaction`         | Add a new transaction by attempting to parse a notification message with a `Notification Scanner Template`.                                                             |
+| `/addTransactionRoute/parseMessageForTransaction`    | Open the add new transaction page and prefill with information after attempting to parse a notification message with a `Notification Scanner Template`.                 |
 
-| Parameter                 | Description                                                                                                                                                                                                         | Required | Default           |
-|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------------- |
-| `message`                 | The notification message to parse.                                                                                                                                                                                  | Yes      | None              |
-| `date` / `dateCreated`    | The date of the transaction. Supported string formats can be found in the `getCommonDateFormats()` method [here](https://github.com/jameskokoska/Cashew/blob/5.2.3%2B328/budget/lib/struct/commonDateFormats.dart). | No       | Current date      | -->
-
+| Parameter            | Description                                     | Required | Default           |
+|--------------------- | ----------------------------------------------- | -------- | ----------------- |
+| `message`            | The message to send to Cashew for parsing.      | Yes      | None              |
 
 ## Add Transaction With Intelligence
 
